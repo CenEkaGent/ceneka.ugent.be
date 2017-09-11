@@ -1,0 +1,136 @@
+#homepage .box {
+    border-radius: 0;
+}
+
+#homepage .ceneka-red {
+    /* #b61817 */
+    background: #b61817;
+    color: #dadada;
+}
+
+#homepage .ceneka-red .content h1, #homepage .content.ceneka-red h1 {
+    color: #dadada !important;
+}
+
+#homepage .bordeaux {
+    /* #722F37 */
+    background: #722F37;
+    color: #dadada;
+}
+
+#homepage .content.bordeaux h1 {
+    color: #dadada !important;
+}
+
+#homepage .ceneka-grey {
+    /* #dadada */
+    background: #dadada;
+    color: #b61817;
+}
+
+#homepage .content.ceneka-grey h1 {
+    color: #b61817 !important;
+}
+
+#homepage .white {
+    color: #722F37;
+}
+
+#homepage .content.white h1 {
+    color: #722F37 !important;
+}
+
+#homepage .description {
+    font-weight: bold;
+}
+
+#homepage .teaser {
+    font-style: italic;
+}
+
+.is-paddingless article {
+    padding: 1.25rem;
+    border-bottom: solid 1.25rem rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+img.column {
+    padding: 0 !important;
+}
+
+a {
+    color: #b61817;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 769px) {
+    .fixed-height200 {
+        height: 200px;
+    }
+    .fixed-height300 {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .nav-menu.is-active {
+        max-height: 234px;
+        width: 235px;
+    }
+    .nav-menu {
+        width: 235px;
+    }
+}
+
+.name.is-hidden-tablet {
+    width: 100% !important;
+    left: unset;
+    top: unset;
+    position: unset;
+    height: 60px;
+}
+
+.card {
+    cursor: pointer;
+    box-shadow: unset;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 2px 3px rgba(10,10,10,0.1),0 0 0 1px rgba(10,10,10,0.1);
+}
+
+.nav-toggle.is-active span {
+    background-color: #b61817;
+}
+
+.nav-toggle.is-active span:nth-child(1) {
+    margin-left: -5px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+}
+
+.nav-toggle span:nth-child(1) {
+    margin-top: -6px;
+}
+
+.nav-toggle span {
+    background-color: #4a4a4a;
+    display: block;
+    height: 1px;
+    left: 50%;
+    margin-left: -7px;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: none 86ms ease-out;
+    transition: none 86ms ease-out;
+        transition-property: none;
+    -webkit-transition-property: background,left,opacity,-webkit-transform;
+    transition-property: background,left,opacity,-webkit-transform;
+    transition-property: background,left,opacity,transform;
+    transition-property: background,left,opacity,transform,-webkit-transform;
+    width: 15px;
+}
