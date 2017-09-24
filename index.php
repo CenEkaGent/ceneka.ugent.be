@@ -14,6 +14,9 @@ if (empty($elements[0])) {
     case 'companies':
         $descriptor = 'Companies';
         include 'views/companies.php';
+    case 'applications':
+        $descriptor = 'Aanbiedingen';
+        include 'views/applications.php';
         break;
     default:
         $descriptor = "404 Not Found";
