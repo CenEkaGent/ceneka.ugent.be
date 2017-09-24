@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <div id="price-class-0" class="is-hidden">
-                <h3>&euro;250</h3>
+                <h3>Prijs: &euro;250</h3>
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
@@ -39,7 +39,7 @@
                 </ul>
             </div>
             <div id="price-class-1" class="is-hidden">
-                <h3>&euro;500</h3>
+                <h3>Prijs: &euro;500</h3>
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
@@ -55,7 +55,7 @@
                 </ul>
             </div>
             <div id="price-class-2" class="is-hidden">
-                <h3>&euro;700</h3>
+                <h3>Prijs: &euro;700</h3>
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
@@ -79,7 +79,7 @@
             <h2>+ Persoonlijk evenement</h2>
             <p>
                 Buiten de standard sponsorpakketten kan is er ook een extra optie om specifieke evenementen te sponsoren.
-                <h3>&euro;150</h3>
+                <h3>Prijs: &euro;150</h3>
                 <ul>
                     <li>Bedrijfsnaam in naam evenement</li>
                     <li>Logo op al het promomateriaal</li>
