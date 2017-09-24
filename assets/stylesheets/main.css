@@ -87,9 +87,6 @@ footer .content a:not(.button):hover {
     color:#363636;
 }
 
-.content a:not(.button) {
-    border-bottom:none;
-}
 .content a:visited:hover {
     color:#363636;
 }
@@ -310,4 +307,15 @@ footer .content a:not(.button):hover {
     border-left: 38px solid #dadada;
     border-bottom: 18px solid transparent;
     z-index: 21;
+}
+
+.heart {
+    color: #b61817 !important;
+}
+
+.accent-left {
+    margin-left: 0px;
+    border-left: 3px solid #b61817;
+    padding-left: 10px;
+    cursor: pointer;
 }

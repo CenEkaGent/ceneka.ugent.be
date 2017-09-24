@@ -15,6 +15,9 @@ if (empty($elements[0])) {
         $descriptor = 'Bestuur';
         include 'views/bestuur.php';
         break;
+    case 'companies':
+        $descriptor = 'Companies';
+        include 'views/companies.php';
     case 'applications':
         $descriptor = 'Aanbiedingen';
         include 'views/applications.php';

@@ -134,3 +134,12 @@ a {
     transition-property: background,left,opacity,transform,-webkit-transform;
     width: 15px;
 }
+
+.tabs li.is-active a {
+    color: #b61817 !important;
+    border-bottom-color: #b61817 !important;
+}
+
+.content li {
+    margin-top: 0.25em;
+}
