@@ -34,5 +34,7 @@
         </div>
     </footer>
 </body>
+<script src="../assets/scripts/jquery-3.2.1.min.js"></script>
 <script src="../../../assets/scripts/navbar-toggle.js"></script>
+<script src="../../../assets/scripts/price-classes-toggle.js"></script>
 </html>

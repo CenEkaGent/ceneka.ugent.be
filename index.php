@@ -11,6 +11,10 @@ if (empty($elements[0])) {
         $descriptor = 'About';
         include 'views/about.php';
         break;
+    case 'companies':
+        $descriptor = 'Companies';
+        include 'views/companies.php';
+        break;
     default:
         $descriptor = "404 Not Found";
         header('HTTP/1.1 404 Not Found');
