@@ -7,7 +7,7 @@
                 CenEka organiseert doorheen het jaar verschillende activiteiten en daar kan U als bedrijf mee helpen!
                 We bieden verschillende pakketten aan om Uw bedrijf bekend te maken bij de studenten.
             </p>
-            <a class="accent-left columns" target="_blank" href="../assets/docs/sponsordossier.pdf">
+            <a class="accent-left columns" target="_blank" href="../assets/docs/sponsordossier.pdf" id="sponsor-document">
                 <div class="tile column is-narrow">
                     <i class="fa fa-file-pdf-o" aria-hidden="true" style="padding-top: 4px;"></i>
                 </div>
@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <div id="price-class-0" class="is-hidden">
-                <h3>&euro;250</h3>
+                <h3>Prijs: &euro;250</h3>
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
@@ -39,7 +39,7 @@
                 </ul>
             </div>
             <div id="price-class-1" class="is-hidden">
-                <h3>&euro;500</h3>
+                <h3>Prijs: &euro;500</h3>
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
@@ -55,7 +55,7 @@
                 </ul>
             </div>
             <div id="price-class-2" class="is-hidden">
-                <h3>&euro;700</h3>
+                <h3>Prijs: &euro;700</h3>
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
@@ -79,7 +79,7 @@
             <h2>+ Persoonlijk evenement</h2>
             <p>
                 Buiten de standard sponsorpakketten kan is er ook een extra optie om specifieke evenementen te sponsoren.
-                <h3>&euro;150</h3>
+                <h3>Prijs: &euro;150</h3>
                 <ul>
                     <li>Bedrijfsnaam in naam evenement</li>
                     <li>Logo op al het promomateriaal</li>
