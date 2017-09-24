@@ -7,7 +7,7 @@
                 CenEka organiseert doorheen het jaar verschillende activiteiten en daar kan U als bedrijf mee helpen!
                 We bieden verschillende pakketten aan om Uw bedrijf bekend te maken bij de studenten.
             </p>
-            <a class="accent-left columns" target="_blank" href="../assets/docs/sponsordossier.pdf">
+            <a class="accent-left columns" target="_blank" href="../assets/docs/sponsordossier.pdf" id="sponsor-document">
                 <div class="tile column is-narrow">
                     <i class="fa fa-file-pdf-o" aria-hidden="true" style="padding-top: 4px;"></i>
                 </div>

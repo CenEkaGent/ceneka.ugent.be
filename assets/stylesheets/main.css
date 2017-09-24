@@ -311,3 +311,7 @@ footer .content a:not(.button):hover {
     padding-left: 10px;
     cursor: pointer;
 }
+
+#sponsor-document {
+    margin: 0;
+}
