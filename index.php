@@ -9,7 +9,11 @@ if (empty($elements[0])) {
 {
     case 'about':
         $descriptor = 'About';
-        include 'views/about.php';
+        include 'views/contact.php';
+        break;
+    case 'bestuur':
+        $descriptor = 'Bestuur';
+        include 'views/bestuur.php';
         break;
     case 'applications':
         $descriptor = 'Aanbiedingen';
