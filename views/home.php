@@ -141,12 +141,18 @@
             </div>
             <div class="tile is-parent">
                 <article class="tile is-child box content ceneka-grey">
-                    <h1 class="has-text-centered-mobile">Iets compleet random</h1>
-                    <div class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, ratione?
-                    </div>
-                    <div class="teaser">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nobis quia assumenda ipsa autem, voluptate inventore accusantium omnis consequatur facilis rerum. Dolore laborum vero nihil quaerat amet, vitae nisi voluptates commodi! Voluptate fugiat soluta error sed tenetur praesentium iure quam. Laudantium laboriosam reiciendis ratione odit cupiditate, fugit nesciunt alias nostrum!
+                    <h1 class="has-text-centered-mobile">Een leuk weetje</h1>
+                        <div class="teaser">
+                            <?php
+                            $trivia = file_get_contents("http://numbersapi.com/random/trivia");
+                            echo $trivia
+                            ?>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="has-text-right">
+                            <small><i><a href="http://numbersapi.com/">~numbersapi</a></i></small>
+                        </div>
                     </div>
                 </article>
             </div>
