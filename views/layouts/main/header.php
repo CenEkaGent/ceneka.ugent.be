@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../../assets/stylesheets/font-awesome.min.css">
     <link rel="stylesheet" href="../../../assets/stylesheets/main.css">
     <link rel="stylesheet" href="../../../assets/stylesheets/bulma-override.css">
+    <script src="../../../assets/scripts/jquery-3.2.1.min.js"></script>
     <link rel='shortcut icon' type='image/x-icon' href='../../../assets/images/favicon.ico' />
     <meta name="Title" content="CenEka: Computerwetenschappen en elektrotechniek van de Universiteit Gent">
     <meta name="Keywords" content="ceneka, elektrotechniek, burgerlijk ingenieur, gent, computerwetenschappen, universiteit gent, ghent university, electrical, engnineering, computer science">
@@ -44,7 +45,7 @@
                                 </span>
                                 <div class="nav-menu nav-left">
                                     <a class="nav-item is-tab " href="/about/">About</a>
-                                    <a class="nav-item is-tab " href="/events/17-18/">Events</a>
+                                    <a class="nav-item is-tab " href="/events/">Events</a>
                                     <a class="nav-item is-tab " href="/applications/">Aanbiedingen</a>
                                     <a class="nav-item is-tab " href="/companies/">Bedrijven</a>
                                 </div>
