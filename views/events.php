@@ -3,7 +3,9 @@
 ob_start();
 include_once 'layouts/main/header.php';
 ?>
+
 <?php
+// Include Event model for easier access
 include_once 'models/event.php';
 
 try {
@@ -23,6 +25,5 @@ try {
 } catch (Exception $e) {
     exit(header("Location: /500/"));
 }
-
 ?>
 <?php include_once 'layouts/main/footer.php' ?>
