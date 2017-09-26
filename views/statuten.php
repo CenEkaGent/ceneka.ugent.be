@@ -19,5 +19,9 @@
             </ul>
         </div>
     </div>
+    <div class= "tile is_vertical is-child">
+    <b> Tekst
+    </b>
+    </div>
 </div>
 <?php include_once 'layouts/main/footer.php' ?>
