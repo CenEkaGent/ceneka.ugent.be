@@ -31,6 +31,11 @@ if (empty($elements[0])) {
             $descriptor = 'Evenementen';
             include 'views/events.php';
             break;
+        case '500':
+            $descriptor = "500 Internal Server Error";
+            header('HTTP/1.1 500 Internal Server Error');
+            include 'views/500.php';
+            break;
         default:
             $descriptor = "404 Not Found";
             header('HTTP/1.1 404 Not Found');
