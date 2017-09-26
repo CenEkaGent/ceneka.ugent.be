@@ -1,8 +1,11 @@
 <?php
-
 $path = ltrim($_SERVER['REQUEST_URI'], '/');
 $path = rtrim($path, '/');
 $elements = explode('/', $path);
+
+function go_to_event($elements) {
+    var_dump($elements);
+}
 
 if (empty($elements[0])) {
     include 'views/home.php';
@@ -27,6 +30,16 @@ if (empty($elements[0])) {
         case 'events':
             $descriptor = 'Evenementen';
             include 'views/events.php';
+            break;
+        default:
+            $descriptor = "404 Not Found";
+            header('HTTP/1.1 404 Not Found');
+            include 'views/404.php';
+    }
+} else if (sizeof($elements) == 2) {
+    switch (array_shift($elements)) {
+        case 'events':
+            go_to_event($elements);
             break;
         default:
             $descriptor = "404 Not Found";
