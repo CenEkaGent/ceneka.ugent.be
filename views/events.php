@@ -7,9 +7,9 @@ try {
     $db = new PDO('sqlite:.events.sqlite');
 
     // Fetch data from database using SQL
-    $sql = 'SELECT * FROM events ORDER BY :order_column';
+    $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn';
     $statement = $db->prepare($sql);
-    $statement->execute(array(':order_column' => 'start-time'));
+    $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
     var_dump($statement->fetchAll(PDO::FETCH_CLASS, 'Event'));
 
     // Close DB connection
