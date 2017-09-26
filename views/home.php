@@ -12,13 +12,23 @@ try {
     // Open DB connection
     $db = new PDO('sqlite:.events.sqlite');
 
-    // Fetch data from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn';
+    // Fetch next event from database using SQL
+    $sql = 'SELECT * FROM events WHERE endTime = (SELECT min(endTime) FROM events WHERE endTime > :currentTime) ORDER BY :orderColumn';
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
+
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
-    // var_dump($statement->fetchAll(PDO::FETCH_CLASS, 'Event'));
+    $next_event = $statement->fetchAll(PDO::FETCH_CLASS, 'Event')[0];
+    
+    // Fetch previous event from database using SQL
+    $sql = 'SELECT * FROM events WHERE endTime = (SELECT max(endTime) FROM events WHERE endTime < :currentTime) ORDER BY :orderColumn';
+    $statement = $db->prepare($sql);
+    if (!$statement)
+        throw new Exception("Database error.");
+
+    $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
+    $previous_event = $statement->fetchAll(PDO::FETCH_CLASS, 'Event')[0];
 
     // Close DB connection
     $db = null;
@@ -30,18 +40,15 @@ try {
 <div id="homepage">
     <div class="tile is-vertical is-ancestor">
         <div class="tile is-parent is-12">
-            <div class="tile is-child box columns ceneka-red is-paddingless fixed-height300">
-                <img class="column is-narrow is-full-mobile" src="http://via.placeholder.com/400x300" alt="">
+            <div id="next-ev" class="tile is-child box columns ceneka-red is-paddingless fixed-height300">
+                <img id="next-ev-img" class="column is-narrow is-full-mobile" src="http://via.placeholder.com/400x300" alt="">
                 <article class="content column">
-                    <h1 class="has-text-centered-mobile">Volgend evenement</h1>
-                    <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, a?
+                    <h1 id="next-ev-title" class="has-text-centered-mobile"><?php echo $next_event->name?></h1>
+                    <div id="next-ev-description" class="description">
+                        <?php echo $next_event->description?>
                     </div>
-                    <div class="teaser">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, alias. Placeat maxime expedita, autem eius,
-                        quas dolorum illum eveniet at quo dolor nisi. Consequatur recusandae cupiditate repellat eum, iure itaque ipsa sint
-                        dicta quae maxime harum, odio explicabo hic voluptatem totam officia? Temporibus repellat, quibusdam molestias odio
-                        assumenda vel rerum.
+                    <div id="next-ev-teaser" class="teaser">
+                        <?php echo $next_event->teaser?>
                     </div>
                 </article>
             </div>
@@ -125,12 +132,12 @@ try {
             </div>
             <div class="tile is-parent is-vertical">
                 <article class="tile is-child box content ceneka-grey">
-                    <h1 class="has-text-centered-mobile">Vorig evenement</h1>
+                    <h1 class="has-text-centered-mobile"><?php echo $previous_event->name?></h1>
                     <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, voluptatum!
+                        <?php echo $previous_event->description?>
                     </div>
                     <div class="teaser">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quos quas numquam tempora a! Magnam rem fugiat aliquam, blanditiis asperiores voluptatibus debitis deserunt laborum cum quibusdam hic cupiditate fugit! Commodi sequi molestiae ex non officia veritatis corrupti consequatur necessitatibus nostrum laudantium, illum corporis fuga adipisci doloribus atque molestias. Reiciendis, minima.
+                    <?php echo $previous_event->teaser?>
                     </div>
                 </article>
                 <article class="tile is-child box content bordeaux">
