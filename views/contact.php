@@ -10,6 +10,9 @@
                     <li>
                         <a href="/bestuur">Bestuur</a>
                     </li>
+                    <li>
+                        <a href="/statuten">Statuten</a>
+                    </li>
                     <li class="is-disabled">
                         <a>Geschiedenis</a>
                     </li>

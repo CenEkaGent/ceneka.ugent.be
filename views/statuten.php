@@ -7,10 +7,10 @@
                 <li>
                     <a href="/about">Contact</a>
                 </li>
-                <li class="is-active">
+                <li>
                     <a href="/bestuur">Bestuur</a>
                 </li>
-                <li>
+                <li class="is-active">
                     <a href="/statuten">Statuten</a>
                 </li>
                 <li class="is-disabled">
