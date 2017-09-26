@@ -323,3 +323,7 @@ footer .content a:not(.button):hover {
 #sponsor-document {
     margin: 0;
 }
+
+pre {
+    overflow-x: scroll;
+}
