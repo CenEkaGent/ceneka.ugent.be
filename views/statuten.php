@@ -20,8 +20,9 @@
         </div>
     </div>
     <div class= "tile is_vertical is-child">
-    <b> Tekst
-    </b>
+        <?php
+             $file = readfile('views/statutenfile.html');
+        ?>
     </div>
 </div>
 <?php include_once 'layouts/main/footer.php' ?>
