@@ -19,5 +19,82 @@
             </ul>
         </div>
     </div>
+    <h1 class="title is-1 has-text-centered">Bestuur CenEka</h1>
+    <div class="tile is-ancestor">
+        <div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+	    	<b> Rol </b>
+		<figure class= "image">
+			<img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+		</figure>
+		<i>Naam</i>
+	    </article>
+        </div>
+	<div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+                <b> Rol </b>
+                <figure class= "image">
+                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+                </figure>
+                <i>Naam</i>
+            </article>
+        </div>
+	<div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+                <b> Rol </b>
+                <figure class= "image">
+                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+                </figure>
+                <i>Naam</i>
+            </article>
+        </div>
+	<div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+                <b> Rol </b>
+                <figure class= "image">
+                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+                </figure>
+                <i>Naam</i>
+            </article>
+        </div>
+    </div>
+    <div class="tile is-ancestor">
+        <div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+	    	<b> Rol </b>
+		<figure class= "image">
+			<img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+		</figure>
+		<i>Naam</i>
+	    </article>
+        </div>
+	<div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+                <b> Rol </b>
+                <figure class= "image">
+                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+                </figure>
+                <i>Naam</i>
+            </article>
+        </div>
+	<div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+                <b> Rol </b>
+                <figure class= "image">
+                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+                </figure>
+                <i>Naam</i>
+            </article>
+        </div>
+	<div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info has-text-centered is-vertical">
+                <b> Rol </b>
+                <figure class= "image">
+                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
+                </figure>
+                <i>Naam</i>
+            </article>
+        </div>
+    </div>
 </div>
 <?php include_once 'layouts/main/footer.php' ?>
