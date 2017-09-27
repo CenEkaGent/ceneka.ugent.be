@@ -19,5 +19,10 @@
             </ul>
         </div>
     </div>
+    <div class= "tile is_vertical is-child">
+        <?php
+             $file = readfile('views/statutenfile.html');
+        ?>
+    </div>
 </div>
 <?php include_once 'layouts/main/footer.php' ?>
