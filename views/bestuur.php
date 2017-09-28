@@ -21,79 +21,22 @@
     </div>
     <h1 class="title is-1 has-text-centered">Bestuur CenEka</h1>
     <div class="tile is-ancestor">
-        <div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-	    	<b> Rol </b>
-		<figure class= "image">
-			<img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-		</figure>
-		<i>Naam</i>
-	    </article>
-        </div>
-	<div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-                <b> Rol </b>
-                <figure class= "image">
-                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-                </figure>
-                <i>Naam</i>
-            </article>
-        </div>
-	<div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-                <b> Rol </b>
-                <figure class= "image">
-                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-                </figure>
-                <i>Naam</i>
-            </article>
-        </div>
-	<div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-                <b> Rol </b>
-                <figure class= "image">
-                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-                </figure>
-                <i>Naam</i>
-            </article>
-        </div>
-    </div>
-    <div class="tile is-ancestor">
-        <div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-	    	<b> Rol </b>
-		<figure class= "image">
-			<img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-		</figure>
-		<i>Naam</i>
-	    </article>
-        </div>
-	<div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-                <b> Rol </b>
-                <figure class= "image">
-                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-                </figure>
-                <i>Naam</i>
-            </article>
-        </div>
-	<div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-                <b> Rol </b>
-                <figure class= "image">
-                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-                </figure>
-                <i>Naam</i>
-            </article>
-        </div>
-	<div class="tile is-parent is-3">
-            <article class="tile is-child notification is-info has-text-centered is-vertical">
-                <b> Rol </b>
-                <figure class= "image">
-                        <img class="is-4by3" src="http://via.placeholder.com/400x300" alt="">
-                </figure>
-                <i>Naam</i>
-            </article>
+        <div class="tile is-parent is-4">
+            <div class="tile card is-child is-vertical">
+		        <div class="card-image">
+			        <figure class="image is-4by3">
+      				    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    			    </figure>
+		        </div>
+		        <div class="card-content">
+    			    <div class="media">
+      				    <div class="media-content">
+        				    <p class="title is-4">John Smith</p>
+        				    <p class="subtitle is-6 is-link"><a href="mailto:lol@ceneka.ugent.be">lol@ceneka.ugent.be</a></p>
+      				    </div>
+    			    </div>
+	            </div>
+            </div>
         </div>
     </div>
 </div>
