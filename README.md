@@ -38,5 +38,13 @@ curl -s https://php-osx.liip.ch/install.sh | bash -s 7.1
 3. Run the php server on that location by running `sudo php -S localhost:80`
 4. Access the site from your browser at `http://localhost/`
 
+## Visual Studio Code
+When developping with VSCode, following packages are recommended:
+- Beautify - HookyQR
+- Material Icon Theme - Philipp Kief
+- PHP Debug - Felix Becker
+- PHP IntelliSense - Felix Becker
+- PHP IntelliSense Crane - Hvy Industries
+
 ## Licence
 This project is licensed under the terms of the MIT license. Read the licence in the [licence file](LICENSE.md).
