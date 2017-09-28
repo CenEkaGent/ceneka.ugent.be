@@ -18,13 +18,23 @@ try {
     if (!$statement)
         throw new Exception("Database error.");
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
-    $events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+    $futureEvents = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+
+    $sql = 'SELECT * FROM events WHERE endTime <= :currentTime ORDER BY :orderColumn';
+    $statement = $db->prepare($sql);
+    if (!$statement)
+        throw new Exception("Database error.");
+    $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
+    $pastEvents = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
 
     // Close DB connection
     $db = null;
 } catch (Exception $e) {
     exit(header("Location: /500/"));
 }
+
+$classes = ["", " ceneka-red", " ceneka-grey", ""];
+
 ?>
 
 <div id="events">
@@ -40,88 +50,64 @@ try {
             </aside>
         </div>
         <div class="column">
+            <?php
+            if (!empty($futureEvents)) {
+            ?>
             <div class="content"><h1>Toekomstige evenementen</h1></div>
-            <div class="tile is-ancestor">
+            <?php
+            }
+            for ($i = 0; $i < sizeof($futureEvents); $i++) {
+                $event = $futureEvents[$i];
+                if ($i % 3 == 0) {
+                    ?><div class="tile is-ancestor"><?php
+                }
+                ?>
                 <div class="tile is-parent">
-                    <div class="tile is-child box">
+                    <div class="tile is-child box<?php print $classes[$i % 4]; ?>" onclick="location.href='/events/<?php print $event->shortName; ?>'" style="cursor: pointer;">
                         <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
+                            <h1 class="title"><?php print $event->name; ?></h1>
+                            <p class="subtitle"><?php print $event->description; ?></p>
+                            <p><?php print $event->teaser; ?></p>
                         </article>
                     </div>
                 </div>
-                <div class="tile is-parent">
-                    <div class="tile is-child box ceneka-red">
-                        <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-            <div class="tile is-ancestor">
-                <div class="tile is-parent">
-                    <div class="tile is-child box ceneka-texture">
-                        <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
-                        </article>
-                    </div>
-                </div>
-                <div class="tile is-parent">
-                    <div class="tile is-child box ceneka-grey">
-                        <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
+                <?php
+                if ($i % 3 == 2) {
+                    ?></div><?php
+                }
+            }
+            if (sizeof($futureEvents) % 3 != 0) {
+                print "</div>";
+            }
+            if (!empty($pastEvents)) {
+            ?>
             <div class="content"><h1>Verleden evenementen</h1></div>
-            <div class="tile is-ancestor">
+            <?php
+            }
+            for ($i = 0; $i < sizeof($pastEvents); $i++) {
+                $event = $pastEvents[$i];
+                if ($i % 3 == 0) {
+                    ?><div class="tile is-ancestor"><?php
+                }
+                ?>
                 <div class="tile is-parent">
-                    <div class="tile is-child box">
+                    <div class="tile is-child box<?php print $classes[$i % 4]; ?>" onclick="location.href='/events/<?php print $event->shortName; ?>'" style="cursor: pointer;">
                         <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
+                            <h1 class="title"><?php print $event->name; ?></h1>
+                            <p class="subtitle"><?php print $event->description; ?></p>
+                            <p><?php print $event->teaser; ?></p>
                         </article>
                     </div>
                 </div>
-                <div class="tile is-parent">
-                    <div class="tile is-child box ceneka-red">
-                        <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-            <div class="tile is-ancestor">
-                <div class="tile is-parent">
-                    <div class="tile is-child box ceneka-texture">
-                        <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
-                        </article>
-                    </div>
-                </div>
-                <div class="tile is-parent">
-                    <div class="tile is-child box ceneka-grey">
-                        <article class="content">
-                            <h1 class="title">Title</h1>
-                            <p class="subtitle">Subtitle</p>
-                            <p>Teaser</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
+                <?php
+                if ($i % 3 == 2) {
+                    ?></div><?php
+                }
+            }
+            if (sizeof($pastEvents) % 3 != 0) {
+                print "</div>";
+            }
+            ?>
         </div>
     </div>
 </div>

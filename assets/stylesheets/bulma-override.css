@@ -12,24 +12,11 @@
     color: #dadada;
 }
 
-.ceneka-texture {
-    background-image: url('../images/texture.png');
-    color: #dadada;
-}
-
 .ceneka-red .title, .ceneka-red .subtitle {
     color: #dadada !important;
 }
 
-.ceneka-texture .title, .ceneka-texture .subtitle {
-    color: #dadada !important;
-}
-
 .ceneka-red .content h1, .content.ceneka-red h1 {
-    color: #dadada !important;
-}
-
-.ceneka-texture .content h1, .content.ceneka-texture h1 {
     color: #dadada !important;
 }
 
