@@ -327,3 +327,9 @@ footer .content a:not(.button):hover {
 pre {
     overflow-x: scroll;
 }
+
+.hero-absolute {
+    position: absolute;
+    width: 100%;
+}
+

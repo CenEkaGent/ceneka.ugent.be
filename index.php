@@ -1,10 +1,46 @@
 <?php
+// Include Event model for easier access
+include_once 'views/models/event.php';
+
 $path = ltrim($_SERVER['REQUEST_URI'], '/');
 $path = rtrim($path, '/');
 $elements = explode('/', $path);
 
 function go_to_event($elements) {
-    var_dump($elements);
+    if (sizeof($elements) == 1) {
+
+        try {
+            // Open DB connection
+            $db = new PDO('sqlite:.events.sqlite');
+
+            // Fetch data from database using SQL
+            $sql = 'SELECT * FROM events WHERE shortName = :shortName';
+            $statement = $db->prepare($sql);
+            if (!$statement)
+                throw new Exception("Database error.");
+            $statement->execute(array(':shortName' => $elements[0]));
+            $data = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+
+            if (sizeof($data) != 1) {
+                $descriptor = "404 Not Found";
+                header('HTTP/1.1 404 Not Found');
+                include 'views/404.php';
+            } else {
+                $event = $data[0];
+                $descriptor = $event->name;
+                include 'views/event-page.php';
+            }
+
+            // Close DB connection
+            $db = null;
+        } catch (Exception $e) {
+            exit(header("Location: /500/"));
+        }
+    } else {
+        $descriptor = "404 Not Found";
+        header('HTTP/1.1 404 Not Found');
+        include 'views/404.php';
+    }
 }
 
 if (empty($elements[0])) {

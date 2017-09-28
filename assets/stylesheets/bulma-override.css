@@ -143,3 +143,7 @@ a {
 .content li {
     margin-top: 0.25em;
 }
+
+.has-text-justified {
+    text-align: justify !important;
+}
