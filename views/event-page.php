@@ -20,6 +20,10 @@ if ($startTime->format('Y-m-d') == $endTime->format('Y-m-d')) {
             <li><i class="fa fa-clock-o fa-li"></i><?php print $time ?></li>
             <?php if (!empty($event->location)) { ?>
                 <li><i class="fa fa-map-marker fa-li"></i><?php print $event->location; ?></li>
+            <?php } if (!empty($event->facebookUrl)) { ?>
+            <li><i class="fa fa-li fa-facebook"></i>
+                <a href="<?php print $event->facebookUrl; ?>">Facebook</a>
+            </li>
             <?php } ?>
         </ul>
         <br>
