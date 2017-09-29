@@ -89,4 +89,5 @@
         </div>
     </article>
 </div>
+<script src="../../../assets/scripts/price-classes-toggle.js"></script>
 <?php include_once 'layouts/main/footer.php' ?>
