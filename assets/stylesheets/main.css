@@ -327,3 +327,7 @@ footer .content a:not(.button):hover {
 pre {
     overflow-x: scroll;
 }
+
+.event {
+    cursor: pointer;
+}

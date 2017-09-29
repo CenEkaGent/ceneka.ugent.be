@@ -13,22 +13,26 @@ try {
     $db = new PDO('sqlite:.events.sqlite');
 
     // Fetch next event from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime = (SELECT min(endTime) FROM events WHERE endTime > :currentTime) ORDER BY :orderColumn';
+    $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
 
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
-    $next_event = $statement->fetchAll(PDO::FETCH_CLASS, 'Event')[0];
+    $next_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
     
     // Fetch previous event from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime = (SELECT max(endTime) FROM events WHERE endTime < :currentTime) ORDER BY :orderColumn';
+    $sql = 'SELECT * FROM events WHERE endTime <= :currentTime ORDER BY :orderColumn LIMIT 2';
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
 
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
-    $previous_event = $statement->fetchAll(PDO::FETCH_CLASS, 'Event')[0];
+    $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+
+    // Display previous event when no future events are present
+    if (sizeof($next_events) == 0)
+        $next_events = [array_shift($previous_events)];
 
     // Close DB connection
     $db = null;
@@ -40,15 +44,15 @@ try {
 <div id="homepage">
     <div class="tile is-vertical is-ancestor">
         <div class="tile is-parent is-12">
-            <div id="next-ev" class="tile is-child box columns ceneka-red is-paddingless fixed-height300">
+            <div id="next-ev" class="tile is-child box columns ceneka-red is-paddingless fixed-height300 event" onclick="location.href='/events/<?php print $next_events[0]->shortName ?>/'">
                 <img id="next-ev-img" class="column is-narrow is-full-mobile" src="http://via.placeholder.com/400x300" alt="">
                 <article class="content column">
-                    <h1 id="next-ev-title" class="has-text-centered-mobile"><?php echo $next_event->name?></h1>
+                    <h1 id="next-ev-title" class="has-text-centered-mobile"><?php echo $next_events[0]->name?></h1>
                     <div id="next-ev-description" class="description">
-                        <?php echo $next_event->description?>
+                        <?php echo $next_events[0]->description?>
                     </div>
                     <div id="next-ev-teaser" class="teaser">
-                        <?php echo $next_event->teaser?>
+                        <?php echo $next_events[0]->teaser?>
                     </div>
                 </article>
             </div>
@@ -131,15 +135,17 @@ try {
                 </article>
             </div>
             <div class="tile is-parent is-vertical">
-                <article class="tile is-child box content ceneka-grey">
-                    <h1 class="has-text-centered-mobile"><?php echo $previous_event->name?></h1>
+                <?php if (sizeof($previous_events) > 0) { ?>
+                <article class="tile is-child box content ceneka-grey event" onclick="location.href='/events/<?php print $previous_events[0]->shortName ?>/'">
+                    <h1 class="has-text-centered-mobile">Vorig evenement: <?php echo $previous_events[0]->name?></h1>
                     <div class="description">
-                        <?php echo $previous_event->description?>
+                        <?php echo $previous_events[0]->description?>
                     </div>
                     <div class="teaser">
-                    <?php echo $previous_event->teaser?>
+                    <?php echo $previous_events[0]->teaser?>
                     </div>
                 </article>
+                <?php } ?>
                 <article class="tile is-child box content bordeaux">
                     <h1 class="has-text-centered-mobile">Sponsor</h1>
                     <div class="description">
@@ -152,17 +158,15 @@ try {
             </div>
         </div>
         <div class="tile is-12">
+            <?php if(sizeof($next_events) >= 2) { ?>
             <div class="tile is-parent">
-                <article class="tile is-child box content ceneka-red">
-                    <h1 class="has-text-centered-mobile">Ander volgend event</h1>
-                    <div class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, ratione?
-                    </div>
-                    <div class="teaser">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nobis quia assumenda ipsa autem, voluptate inventore accusantium omnis consequatur facilis rerum. Dolore laborum vero nihil quaerat amet, vitae nisi voluptates commodi! Voluptate fugiat soluta error sed tenetur praesentium iure quam. Laudantium laboriosam reiciendis ratione odit cupiditate, fugit nesciunt alias nostrum!
-                    </div>
+                <article class="tile is-child box content ceneka-red event" onclick="location.href='/events/<?php print $next_events[1]->shortName ?>/'">
+                    <h1 class="has-text-centered-mobile"><?php echo $next_events[1]->name?></h1>
+                    <div class="description"><?php echo $next_events[1]->name?></div>
+                    <div class="teaser"><?php echo $next_events[1]->name?></div>
                 </article>
             </div>
+            <?php } ?>
             <div class="tile is-parent">
                 <article class="tile is-child box content white">
                     <h1 class="has-text-centered-mobile">Blogpost?</h1>
@@ -170,24 +174,21 @@ try {
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, ratione?
                     </div>
                     <div class="teaser">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nobis quia assumenda ipsa autem, voluptate inventore accusantium omnis consequatur facilis rerum. Dolore laborum vero nihil quaerat amet, vitae nisi voluptates commodi! Voluptate fugiat soluta error sed tenetur praesentium iure quam. Laudantium laboriosam reiciendis ratione odit cupiditate, fugit nesciunt alias nostrum!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sint mollitia voluptate earum impedit ducimus, molestiae aspernatur iste repellendus rerum porro suscipit vitae totam laudantium necessitatibus quas assumenda, sit hic culpa exercitationem obcaecati. Quibusdam culpa rerum autem et voluptas sint quo, quidem hic deserunt nisi, voluptates porro veniam aperiam repellendus saepe, aliquam alias eligendi maxime minima? Tempora fugit quis, distinctio, corporis, similique quia inventore eum libero iure eos at minus ad quam reiciendis ipsam aut veritatis ex doloremque cum molestias quidem laboriosam accusamus quisquam minima. Consectetur odio minima tempora necessitatibus. Optio eius voluptas placeat. Culpa nulla cum voluptas ratione sint!
                     </div>
                 </article>
             </div>
             <div class="tile is-parent">
-                <article class="tile is-child box content ceneka-grey">
-                    <h1 class="has-text-centered-mobile">Een leuk weetje</h1>
-                        <div class="teaser">
-                            <?php
-                            $trivia = file_get_contents("http://numbersapi.com/random/trivia");
-                            echo $trivia
-                            ?>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="has-text-right">
-                            <small><i><a href="http://numbersapi.com/">~numbersapi</a></i></small>
-                        </div>
+                <article class="tile is-child box content ceneka-grey columns is-vertical">
+                    <h1 class="has-text-centered-mobile column is-narrow title">Een leuk weetje</h1>
+                    <div class="teaser column">
+                        <?php
+                        $trivia = file_get_contents("http://numbersapi.com/random/trivia");
+                        echo $trivia
+                        ?>
+                    </div>
+                    <div class="has-text-right column is-narrow">
+                        <small><i><a href="http://numbersapi.com/">~numbersapi</a></i></small>
                     </div>
                 </article>
             </div>
