@@ -13,6 +13,7 @@ class Event {
     public $location;
     public $locationUrl;
     public $facebookUrl;
+    public $longDescription;
 
     function __construct() {
         $this->id = (int)$this->id;
