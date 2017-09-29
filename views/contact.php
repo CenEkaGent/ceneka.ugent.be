@@ -10,6 +10,9 @@
                     <li>
                         <a href="/bestuur">Bestuur</a>
                     </li>
+                    <li>
+                        <a href="/statuten">Statuten</a>
+                    </li>
                     <li class="is-disabled">
                         <a>Geschiedenis</a>
                     </li>
@@ -21,7 +24,7 @@
                 <h2 class="title is-4">Adres</h2>
                 <div class="tile box">
                     <div class="columns is-fullwidth is-vcentered">
-                        <div class="column is-narrow">
+                        <div class="column is-narrow has-text-centered-mobile">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.4613464497265!2d3.7256436158242088!3d51.04456867956179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c371505ee9c6d1%3A0xb633fd3e413fb1b6!2sHoveniersberg+24%2C+9000+Gent!5e0!3m2!1snl!2sbe!4v1506265718708" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                         <div class="column has-text-centered">

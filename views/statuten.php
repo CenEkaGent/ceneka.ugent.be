@@ -7,10 +7,10 @@
                 <li>
                     <a href="/about">Contact</a>
                 </li>
-                <li class="is-active">
+                <li>
                     <a href="/bestuur">Bestuur</a>
                 </li>
-                <li>
+                <li class="is-active">
                     <a href="/statuten">Statuten</a>
                 </li>
                 <li class="is-disabled">
@@ -18,6 +18,11 @@
                 </li>
             </ul>
         </div>
+    </div>
+    <div class= "tile is_vertical is-child">
+        <?php
+             $file = readfile('views/statutenfile.html');
+        ?>
     </div>
 </div>
 <?php include_once 'layouts/main/footer.php' ?>
