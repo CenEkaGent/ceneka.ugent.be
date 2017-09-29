@@ -328,8 +328,11 @@ pre {
     overflow-x: scroll;
 }
 
+.event {
+    cursor: pointer;
+}
+
 .hero-absolute {
     position: absolute;
     width: 100%;
 }
-
