@@ -19,7 +19,7 @@
             </ul>
         </div>
     </div>
-    <h1 class="title is-1 has-text-centered">Bestuur CenEka</h1>
+    <h1 class="title is-1 has-text-centered" style="margin-top: 1.5rem;">Bestuur CenEka</h1>
     <div class="tile is-ancestor is-vertical">
         <div class="tile is-parent">
             <div class="tile is-parent is-8">
@@ -27,7 +27,7 @@
                     <h1 class="has-text-centered">Praeses | Vice-Praeses</h1>
                     <div class="tile is-parent is-12">
                         <div class="tile is-parent is-6">
-                            <div class="tile card is-child is-vertical">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:praeses@ceneka.be'">
                                 <div class="card-image">
                                     <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                                 </div>
@@ -42,14 +42,14 @@
                                         Als praeses is Achim het voornaamste aanspreekpunt van de vereniging. Hij vertegenwoordigd CenEka op
                                         allerlei events doorheen het academiejaar. Dit houdt hem anderzijds allerminst tegen om actief mee te werken
                                         aan onze activiteiten.<br>
-                                        Mail: <a href="mailto:praeses@ceneka.be">praeses@ceneka.be</a>
+                                        Mail: <a>praeses@ceneka.be</a>
                                     </div> 
 
                                 </div>
                             </div>
                         </div>
                         <div class="tile is-parent is-6">
-                            <div class="tile card is-child is-vertical">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:vice@ceneka.be'">
                                 <div class="card-image">
                                     <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                                 </div>
@@ -64,7 +64,7 @@
                                         Ons kleinste lid, de vice-praeses, is de persoon bij uitstek die het reilen en zeilen binnen de vereniging 
                                         bijhoudt en coördineerd. Door een goed team te vormen met de praeses leiden zij alle activiteiten in goede
                                         banen <br>
-                                        Mail: <a href="mailto:praeses@ceneka.be">praeses@ceneka.be</a>
+                                        Mail: <a>vice@ceneka.be</a>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                 <h1 class="has-text-centered">Career Team</h1>
                 <div class="tile is-parent is-12">
                     <div class="tile is-parent is-4">
-                        <div class="tile card is-child is-vertical">
+                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Jeroen Flipts] '">
                             <div class="card-image">
                                 <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </div>
@@ -122,14 +122,14 @@
                                     Als meest ervaren lid van het career team brengt Jeroen veel kennis van zaken met zich mee in
                                     verband met het organiseren van de EMECS Career Day (Fair?). Hij zorgt voor een nuchtere kijk
                                     en een kritische geest<br>
-                                    Mail: <a href="mailto:career@ceneka.be">career@ceneka.be</a>
+                                    Mail: <a>career@ceneka.be</a>
                                 </div> 
 
                             </div>
                         </div>
                     </div>
                     <div class="tile is-parent is-4">
-                        <div class="tile card is-child is-vertical">
+                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Dennis Maes] '">
                             <div class="card-image">
                                 <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </div>
@@ -144,13 +144,13 @@
                                     Een frisse wind en een professionele aanpak. Zo kunnen we het best de invloed van Dennis in het
                                     Career Team beschrijven. Met veel goede ideëen en een vernieuwd perspectief zorgt hij voor een 
                                     <i>positive vibe</i><br>
-                                    Mail: <a href="mailto:career@ceneka.be">career@ceneka.be</a>
+                                    Mail: <a>career@ceneka.be</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tile is-parent is-4">
-                        <div class="tile card is-child is-vertical">
+                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Aren Maes] '">
                             <div class="card-image">
                                 <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </div>
@@ -165,7 +165,7 @@
                                     Op een rustige en bescheiden manier is Aren de stille werkkracht binnen het Career Team. 
                                     Hij doet zijn werk altijd op zijn eigen tempo, maar je kan er steeds zeker van zijn dat 
                                     het af zal geraken<br>
-                                    Mail: <a href="mailto:career@ceneka.be">career@ceneka.be</a>
+                                    Mail: <a>career@ceneka.be</a>
                                 </div> 
 
                             </div>
