@@ -23,15 +23,13 @@
     <div class="tile is-ancestor is-vertical">
         <div class="tile is-parent">
             <div class="tile is-parent is-8">
-                <div class="tile is-child box is-12 is-vertical">
+                <div class="tile is-child box content is-12 is-vertical">
                     <h1 class="has-text-centered">Praeses | Vice-Praeses</h1>
                     <div class="tile is-parent is-12">
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical">
                                 <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                    </figure>
+                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -53,9 +51,7 @@
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical">
                                 <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                    </figure>
+                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -76,11 +72,10 @@
                     </div>
                 </div>
 
-            </div>
-            
+            </div> 
             <div class="tile is-parent is-4 is-vertical">
-                <div class="tile is-child is-12">
-                    <article class="content box column">
+                <div class="tile is-child">
+                    <article class="content box">
                         <h1 class="has-text-centered">Medewerker worden?</h1>
                         <div class="description">
                             Help je graag mee bij het organiseren van allerhande diverse activiteiten, gaande van
@@ -91,8 +86,8 @@
                         </div>
                     </article>
                 </div>
-                <div class="tile is-child is-12">
-                <article class="content box column">
+                <div class="tile is-child">
+                    <article class="content box">
                         <h1 class="has-text-centered">Bestuurslid worden?</h1>
                         <div class="description">
                             Geïnteresseerd in een aanzienlijkere rol dan gewoon medewerker? Ben je bereid (en klaar) 
@@ -107,17 +102,14 @@
             </div>
         </div>
         
-
         <div class="tile is-parent is-12">
-            <div class="tile is-child box is-12 is-vertical">
+            <div class="tile is-child box content is-12 is-vertical">
                 <h1 class="has-text-centered">Career Team</h1>
                 <div class="tile is-parent is-12">
                     <div class="tile is-parent is-4">
                         <div class="tile card is-child is-vertical">
                             <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                </figure>
+                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </div>
                             <div class="card-content">
                                 <div class="media">
@@ -139,15 +131,13 @@
                     <div class="tile is-parent is-4">
                         <div class="tile card is-child is-vertical">
                             <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                </figure>
+                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </div>
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-content">
                                         <p class="title is-5">Dennis Maes</p>
-                                        <p class="subtitle is-7 is-link"><a>@theFilosopher</a></p>
+                                        <p class="subtitle is-7 is-link"><a>@thePhilosopher</a></p>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -162,9 +152,7 @@
                     <div class="tile is-parent is-4">
                         <div class="tile card is-child is-vertical">
                             <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                                </figure>
+                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                             </div>
                             <div class="card-content">
                                 <div class="media">
