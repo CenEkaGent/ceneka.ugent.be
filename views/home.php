@@ -168,17 +168,6 @@ try {
             </div>
             <?php } ?>
             <div class="tile is-parent">
-                <article class="tile is-child box content white">
-                    <h1 class="has-text-centered-mobile">Blogpost?</h1>
-                    <div class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, ratione?
-                    </div>
-                    <div class="teaser">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sint mollitia voluptate earum impedit ducimus, molestiae aspernatur iste repellendus rerum porro suscipit vitae totam laudantium necessitatibus quas assumenda, sit hic culpa exercitationem obcaecati. Quibusdam culpa rerum autem et voluptas sint quo, quidem hic deserunt nisi, voluptates porro veniam aperiam repellendus saepe, aliquam alias eligendi maxime minima? Tempora fugit quis, distinctio, corporis, similique quia inventore eum libero iure eos at minus ad quam reiciendis ipsam aut veritatis ex doloremque cum molestias quidem laboriosam accusamus quisquam minima. Consectetur odio minima tempora necessitatibus. Optio eius voluptas placeat. Culpa nulla cum voluptas ratione sint!
-                    </div>
-                </article>
-            </div>
-            <div class="tile is-parent">
                 <article class="tile is-child box content ceneka-grey columns is-vertical">
                     <h1 class="has-text-centered-mobile column is-narrow title">Een leuk weetje</h1>
                     <div class="teaser column">
