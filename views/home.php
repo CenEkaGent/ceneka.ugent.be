@@ -167,6 +167,11 @@ try {
                 </article>
             </div>
             <?php } ?>
+            <div class="tile is-parent is-narrow">
+                <article class="tile is-child">
+                    <img src="assets/images/schild.png" alt="">
+                </article>
+            </div>
             <div class="tile is-parent">
                 <article class="tile is-child box content ceneka-grey columns is-vertical">
                     <h1 class="has-text-centered-mobile column is-narrow title">Een leuk weetje</h1>
