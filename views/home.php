@@ -146,13 +146,23 @@ try {
                     </div>
                 </article>
                 <?php } ?>
-                <article class="tile is-child box content bordeaux">
-                    <h1 class="has-text-centered-mobile">Sponsor</h1>
+                <article class="tile is-child box content bordeaux card" onclick="location.href='/companies/'">
+                    <h1 class="has-text-centered-mobile">Sponsors</h1>
                     <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, voluptatum!
+                        You know we love them!
                     </div>
                     <div class="teaser">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quos quas numquam tempora a! Magnam rem fugiat aliquam, blanditiis asperiores voluptatibus debitis deserunt laborum cum quibusdam hic cupiditate fugit! Commodi sequi molestiae ex non officia veritatis corrupti consequatur necessitatibus nostrum laudantium, illum corporis fuga adipisci doloribus atque molestias. Reiciendis, minima.
+                        <p>
+                            Zonder sponsors zouden velen van onze evenementen gelimiteerd zijn.
+                            Door een nauwe samenwerking met bedrijven en personen kunnen wij de studenten beter voorzien
+                            en de studenten bekend laten maken met het bedrijfsleven.
+                        </p>
+                        <p>
+                            Wij bij CenEka geven bedrijven de kans om een nauwe samenwerking aan te gaan.
+                            Dit door sponsors de kans te geven voorstellen voor evenementen te doen en deze
+                            samen te organiseren. In ruil voor deze bijdrage, helpen wij bedrijven beter in
+                            contact te komen met de studenten en het juiste doelpubliek te vinden.
+                        </p>
                     </div>
                 </article>
             </div>

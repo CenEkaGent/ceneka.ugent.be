@@ -1,6 +1,6 @@
 <?php include_once 'layouts/main/header.php' ?>
 <div id="companies" class="columns">
-    <article class="is-8 is-offset-2 column">
+    <article class="is-8 is-offset-1 column">
         <h1 class="title is-1 has-text-centered">CenEka <i class="fa fa-heart heart"></i> Bedrijven</h1>
         <div class="content">
             <p>
@@ -88,6 +88,19 @@
             </p>
         </div>
     </article>
+    <aside class="is-2 column content">
+        <h2 class="title has-text-centered">We bedanken deze sponsors!</h2>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
+    </aside>
 </div>
 <script src="../../../assets/scripts/price-classes-toggle.js"></script>
 <?php include_once 'layouts/main/footer.php' ?>
