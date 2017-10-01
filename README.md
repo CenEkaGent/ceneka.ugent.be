@@ -36,7 +36,7 @@ curl -s https://php-osx.liip.ch/install.sh | bash -s 7.1
 1. Clone the repo using SSH (recommended): `git clone git@github.com:CenEkaGent/ceneka.ugent.be.git` or using HTTPS: `git clone https://github.com/CenEkaGent/ceneka.ugent.be.git`.
 2. `cd ceneka.ugent.be`
 3. Run the php server on that location by running `php -S localhost:8080`
-4. Access the site from your browser at `http://localhost/`
+4. Access the site from your browser at `http://localhost:8080/`
 
 ## Visual Studio Code
 When developping with VSCode, following packages are recommended:
