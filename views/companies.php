@@ -90,16 +90,6 @@
     </article>
     <aside class="is-2 column content">
         <h2 class="title has-text-centered">We bedanken deze sponsors!</h2>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
-        <a><img src="http://via.placeholder.com/400x200" alt="" class="is-12"></a>
     </aside>
 </div>
 <script src="../../../assets/scripts/price-classes-toggle.js"></script>

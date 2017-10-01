@@ -63,8 +63,9 @@ try {
                     <h1 class="has-text-centered">
                         <a href="applications/">Jobaanbiedingen</a>
                     </h1>
-                    <div class="teaser">
-                        <div class="card">
+                    <div class="teaser has-text-centered">
+                        <h1 class="title" style="margin-top: 300px; margin-bottom: 370px;">Stay tuned for more!</h1>
+                        <!--<div class="card">
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-left">
@@ -126,7 +127,7 @@ try {
                                     <small>Time of creation</small>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <br>
                     <div class="has-text-right">

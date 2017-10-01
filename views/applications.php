@@ -1,7 +1,7 @@
 <?php include_once 'layouts/main/header.php' ?>
 <!--This could be added as a template when DB is added -->
 <div id="applications">
-    <div class="tile is-vertical is-ancestor">
+    <!--<div class="tile is-vertical is-ancestor">
         <div class="tile is-parent is-12">
             <div class="tile is-child box columns is-paddingless fixed-height300">
                 <img class="column is-narrow is-full-mobile" src="http://via.placeholder.com/400x300" alt="">
@@ -42,6 +42,16 @@
                     </p>
                 </article>
                 <img class="column is-narrow is-full-mobile" src="http://via.placeholder.com/400x300" alt="">
+            </div>
+        </div>
+    </div>-->
+    <div class="tile is-vertical is-ancestor">
+        <div class="tile is-parent is-12">
+            <div class="tile is-child content">
+                <h1 class="title has-text-centered">Stay tuned for more!</h1>
+                <h1 class="title has-text-centered">.</h1>
+                <h1 class="title has-text-centered">.</h1>
+                <h1 class="title has-text-centered">.</h1>
             </div>
         </div>
     </div>
