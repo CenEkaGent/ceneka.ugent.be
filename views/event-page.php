@@ -28,7 +28,12 @@ if ($startTime->format('Y-m-d') == $endTime->format('Y-m-d')) {
         </ul>
         <br>
         <div class="is-10 is-offset-1 column content has-text-justified">
-            <?php print $event->longDescription; ?>
+            <p><?php print $event->longDescription; ?></p>
+            <?php if (!empty($event->info)) { ?>
+            <p>
+                Meer info op: <a href="<?php echo $event->info; ?>" target="_blank"><?php echo $event->info; ?></a>
+            </p>
+            <?php } ?>
             <?php if (!empty($event->locationUrl)) { ?>
                 <iframe src="<?php print $event->locationUrl; ?>" style="height: 400px; width: 100%;"></iframe>
             <?php } ?>
