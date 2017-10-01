@@ -44,8 +44,8 @@ try {
 <div id="homepage">
     <div class="tile is-vertical is-ancestor">
         <div class="tile is-parent is-12">
-            <div id="next-ev" class="tile is-child box columns ceneka-red is-paddingless fixed-height300 event" onclick="location.href='/events/<?php print $next_events[0]->shortName ?>/'">
-                <img id="next-ev-img" class="column is-narrow is-full-mobile" src="http://via.placeholder.com/400x300" alt="">
+            <div id="next-ev" class="tile is-child box columns ceneka-red is-paddingless fixed-height265 event" onclick="location.href='/events/<?php print $next_events[0]->shortName ?>/'">
+                <img id="next-ev-img" class="column is-narrow is-full-mobile" src="<?php echo $next_events[0]->images[0]; ?>" alt="">
                 <article class="content column">
                     <h1 id="next-ev-title" class="has-text-centered-mobile"><?php echo $next_events[0]->name?></h1>
                     <div id="next-ev-description" class="description">
