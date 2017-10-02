@@ -173,8 +173,11 @@ try {
             <div class="tile is-parent">
                 <article class="tile is-child box content ceneka-red event" onclick="location.href='/events/<?php print $next_events[1]->shortName ?>/'">
                     <h1 class="has-text-centered-mobile"><?php echo $next_events[1]->name?></h1>
-                    <div class="description"><?php echo $next_events[1]->name?></div>
-                    <div class="teaser"><?php echo $next_events[1]->name?></div>
+                    <div class="description"><?php echo $next_events[1]->description?></div>
+                    <div class="teaser"><?php echo $next_events[1]->teaser?></div>
+                    <?php if (isset($next_events[1]->images[1])) { ?>
+                        <br><img src="<?php echo $next_events[1]->images[1]; ?>" alt="">
+                    <?php } ?>
                 </article>
             </div>
             <?php } ?>
