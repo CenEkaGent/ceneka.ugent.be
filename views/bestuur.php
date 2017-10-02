@@ -19,7 +19,7 @@
             </ul>
         </div>
     </div>
-    <h1 class="title is-1 has-text-centered">Bestuur CenEka</h1>
+    <h1 class="title is-1 has-text-centered" style="margin-top: 1.5rem;">Bestuur CenEka</h1>
     <div class="tile is-ancestor is-vertical">
         <div class="tile is-parent">
             <div class="tile is-parent is-8">
