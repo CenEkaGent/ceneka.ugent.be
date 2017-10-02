@@ -102,78 +102,241 @@
             </div>
         </div>
         
-        <div class="tile is-parent is-12">
-            <div class="tile is-child box content is-12 is-vertical">
-                <h1 class="has-text-centered">Career Team</h1>
-                <div class="tile is-parent is-12">
-                    <div class="tile is-parent is-4">
-                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Jeroen Flipts] '">
-                            <div class="card-image">
-                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-5">Jeroen Flipts</p>
-                                        <p class="subtitle is-7 is-link"><a>@theNegotiator</a></p>
-                                    </div>
+        <div class="tile is-parent is-12 is-vertical">
+            <div class="tile is-parent is-12 is-vertical">
+                <div class="tile is-child box content">
+                    <h1 class="has-text-centered">Career Team</h1>
+                    <div class="tile is-parent is-12">
+                        <div class="tile is-parent is-4">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Jeroen Flipts] '">
+                                <div class="card-image">
+                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                                 </div>
-                                <div class="content">
-                                    Als meest ervaren lid van het career team brengt Jeroen veel kennis van zaken met zich mee in
-                                    verband met het organiseren van de EMECS Career Day (Fair?). Hij zorgt voor een nuchtere kijk
-                                    en een kritische geest<br>
-                                    Mail: <a>career@ceneka.be</a>
-                                </div> 
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-5">Jeroen Flipts</p>
+                                            <p class="subtitle is-7 is-link"><a>@theNegotiator</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        Als meest ervaren lid van het career team brengt Jeroen veel kennis van zaken met zich mee in
+                                        verband met het organiseren van de EMECS Career & Technology Event. Hij zorgt voor een nuchtere kijk
+                                        en een kritische geest.<br>
+                                        Mail: <a>career@ceneka.be</a>
+                                    </div> 
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tile is-parent is-4">
-                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Dennis Maes] '">
-                            <div class="card-image">
-                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-5">Dennis Maes</p>
-                                        <p class="subtitle is-7 is-link"><a>@thePhilosopher</a></p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    Een frisse wind en een professionele aanpak. Zo kunnen we het best de invloed van Dennis in het
-                                    Career Team beschrijven. Met veel goede ideëen en een vernieuwd perspectief zorgt hij voor een 
-                                    <i>positive vibe</i><br>
-                                    Mail: <a>career@ceneka.be</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tile is-parent is-4">
-                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Aren Maes] '">
-                            <div class="card-image">
-                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-5">Aren Maes</p>
-                                        <p class="subtitle is-7 is-link"><a>@theSilentKiller</a></p>
+                        <div class="tile is-parent is-4">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Dennis Maes] '">
+                                <div class="card-image">
+                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-5">Dennis Maes</p>
+                                            <p class="subtitle is-7 is-link"><a>@thePhilosopher</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        Een frisse wind en een professionele aanpak. Zo kunnen we het best de invloed van Dennis in het
+                                        Career Team beschrijven. Met veel goede ideëen en een vernieuwd perspectief zorgt hij voor een 
+                                        <i>positive vibe</i>.<br>
+                                        Mail: <a>career@ceneka.be</a>
                                     </div>
                                 </div>
-                                <div class="content">
-                                    Op een rustige en bescheiden manier is Aren de stille werkkracht binnen het Career Team. 
-                                    Hij doet zijn werk altijd op zijn eigen tempo, maar je kan er steeds zeker van zijn dat 
-                                    het af zal geraken<br>
-                                    Mail: <a>career@ceneka.be</a>
-                                </div> 
-
+                            </div>
+                        </div>
+                        <div class="tile is-parent is-4">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Aren Maes] '">
+                                <div class="card-image">
+                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-5">Aren Maes</p>
+                                            <p class="subtitle is-7 is-link"><a>@theSilentKiller</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        Op een rustige en bescheiden manier is Aren de stille werkkracht binnen het Career Team. 
+                                        Hij doet zijn werk altijd op zijn eigen tempo, maar je kan er steeds zeker van zijn dat 
+                                        het af zal geraken.<br>
+                                        Mail: <a>career@ceneka.be</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
+        </div>
+        <div class="tile is-parent is-horizontal is-12">
+            <div class="tile is-parent is-4">
+                <div class="tile is-child box content">
+                    <h1 class="has-text-centered">Externe</h1>
+                    <div class="tile card is-child is-vertical" onclick="location.href='mailto:externe@ceneka.be'">
+                        <div class="card-image">
+                            <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-5">Rémi Delanghe</p>
+                                    <p class="subtitle is-7 is-link"><a>@theProducer</a></p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Vorig jaar met trots onze vice-praeses, brengt Rémi dit jaar zijn professionaliteit en 
+                                kundigheid even zeer als externe verantwoordelijke. Hij is hét aanspreekpunt bij uitstek
+                                voor bedrijven en allerhande niet-leden.<br>
+                                Mail: <a>externe@ceneka.be</a>
+                            </div> 
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent is-4">
+                <div class="tile is-child box content">
+                    <h1 class="has-text-centered">Interne</h1>
+                    <div class="tile card is-child is-vertical" onclick="location.href='mailto:interne@ceneka.be'">
+                        <div class="card-image">
+                            <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-5">Jarne Verhaeghe</p>
+                                    <p class="subtitle is-7 is-link"><a>@theRookie</a></p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Als jongste lid van het bestuur zorgt Jarne voor het jeugdig enthousiasme dat een 
+                                interne verantwoordelijke nodig heeft. Met zijn energie en levendigheid maakt hij
+                                iedereen warm voor de activiteiten verzorgt hij de sociale media.<br>
+                                Mail: <a>interne@ceneka.be</a>
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent is-4">
+                <div class="tile is-child box content">
+                    <h1 class="has-text-centered">Penningmeester</h1>
+                    <div class="tile card is-child is-vertical" onclick="location.href='mailto:penning@ceneka.be'">
+                        <div class="card-image">
+                            <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-5">Bjorn Claes</p>
+                                    <p class="subtitle is-7 is-link"><a>@theUnicorn</a></p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Misschien wel het bestuurslid met de rijkste personaliteit. Bjorn is de gangmaker op 
+                                vergaderingen en activiteiten die CenEka organiseert, maar combineert dit met een 
+                                uitzonderlijk scherp oog voor detail. Daarnaast moet je ook bij hem zijn voor een
+                                avond vol pannekoeken en K3.<br>
+                                Mail: <a>interne@ceneka.be</a>
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tile is-parent is-horizontal is-12">
+            <div class="tile is-parent is-4">
+                <div class="tile is-parent is-vertical box content">
+                    <h1 class="has-text-centered">Feest</h1>
+                    <div class="tile is-parent is-horizontal">
+                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:feest@ceneka.be'">
+                            <div class="card-image">
+                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-5">Nick Barbé</p>
+                                        <p class="subtitle is-7 is-link"><a>@thePartyAnimal</a></p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    Zelfs onder de CW'ers en elektrotechniekers zitten er lossbollen, waaronder onze eigen Nick. 
+                                    Naast de organisatie van de culturele activiteiten, gebruikt hij dan ook graag deze kennis om onze beruchte 
+                                    feestjes naar hogere sferen te brengen.<br>
+                                    Mail: <a>externe@ceneka.be</a>
+                                </div> 
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent is-8">
+                <div class="tile is-parent is-vertical box content">
+                    <h1 class="has-text-centered">Web</h1>
+                    <div class="tile is-parent is-horizontal">
+                        <div class="tile is-parent is-6">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:web@ceneka.be?subject=[Tim Vandamme]'">
+                                <div class="card-image">
+                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-5">Tim Vandamme</p>
+                                            <p class="subtitle is-7 is-link"><a>@theCprogrammer</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        Naast een opvallende liefde voor de programmeertaal C zijn er nog 2 kenmerken die opvallen
+                                        aan de eerste helft van ons webduo: zijn hardnekkigheid en leergierigheid. Als webbie is hij verantwoordelijk
+                                        voor het onderhoud van de site en diverse ICT-gerelateerde activiteiten.<br>
+                                        Mail: <a>web@ceneka.be</a>
+                                    </div> 
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile is-parent is-6">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:web@ceneka.be?subject=[Tim Van Erum]'">
+                                <div class="card-image">
+                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-5">Tim Van Erum</p>
+                                            <p class="subtitle is-7 is-link"><a>@SunshineIncarnate</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        Simpelweg een onuitputtelijke bron van geluk, positiviteit en blijdschap (ideale kwaliteiten
+                                        om al de bugs uit onze code te halen). Zonder overdrijven kunnen we zeggen dat Tim een
+                                        essentieel deel uitmaakt van CenEka en door buiten de oevers van web te treden de ruggengraat
+                                        van de vereniging vervolledigd. <br>
+                                        Mail: <a>web@ceneka.be</a>
+                                    </div> 
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
