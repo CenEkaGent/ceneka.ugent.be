@@ -54,6 +54,18 @@ try {
                     <div id="next-ev-teaser" class="teaser">
                         <?php echo $next_events[0]->teaser?>
                     </div>
+                    <div>
+                        <ul class="fa-ul" style="list-style: none;">
+                            <li><i class="fa fa-clock-o fa-li"></i><?php print $next_events[0]->startTime; ?></li>
+                            <?php if (!empty($next_events[0]->location)) { ?>
+                                <li><i class="fa fa-map-marker fa-li"></i><?php print $next_events[0]->location; ?></li>
+                            <?php } if (!empty($next_events[0]->facebookUrl)) { ?>
+                            <li><i class="fa fa-li fa-facebook"></i>
+                                <a href="<?php print $next_events[0]->facebookUrl; ?>" style="color: #dadada;">Facebook</a>
+                            </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
                 </article>
             </div>
         </div>
@@ -143,7 +155,19 @@ try {
                         <?php echo $previous_events[0]->description?>
                     </div>
                     <div class="teaser">
-                    <?php echo $previous_events[0]->teaser?>
+                        <?php echo $previous_events[0]->teaser; ?>
+                    </div>
+                    <div>
+                        <ul class="fa-ul" style="list-style: none;">
+                            <li><i class="fa fa-clock-o fa-li"></i><?php print $previous_events[0]->startTime; ?></li>
+                            <?php if (!empty($previous_events[0]->location)) { ?>
+                                <li><i class="fa fa-map-marker fa-li"></i><?php print $previous_events[0]->location; ?></li>
+                            <?php } if (!empty($previous_events[0]->facebookUrl)) { ?>
+                            <li><i class="fa fa-li fa-facebook"></i>
+                                <a href="<?php print $previous_events[0]->facebookUrl; ?>">Facebook</a>
+                            </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </article>
                 <?php } ?>
@@ -178,6 +202,18 @@ try {
                     <?php if (isset($next_events[1]->images[1])) { ?>
                         <br><img src="<?php echo $next_events[1]->images[1]; ?>" alt="">
                     <?php } ?>
+                    <div>
+                        <ul class="fa-ul" style="list-style: none;">
+                            <li><i class="fa fa-clock-o fa-li"></i><?php print $next_events[1]->startTime; ?></li>
+                            <?php if (!empty($next_events[1]->location)) { ?>
+                                <li><i class="fa fa-map-marker fa-li"></i><?php print $next_events[1]->location; ?></li>
+                            <?php } if (!empty($next_events[1]->facebookUrl)) { ?>
+                            <li><i class="fa fa-li fa-facebook"></i>
+                                <a href="<?php print $next_events[1]->facebookUrl; ?>">Facebook</a>
+                            </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
                 </article>
             </div>
             <?php } ?>
