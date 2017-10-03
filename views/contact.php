@@ -45,7 +45,7 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
-                                    <figure class="image is-64x48 is-marginless">
+                                    <figure class="image is-64x64 is-marginless">
                                         <img src="/assets/images/achim.png" alt="Company logo">
                                     </figure>
                                 </div>
