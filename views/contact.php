@@ -46,7 +46,7 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-64x48 is-marginless">
-                                        <img src="http://via.placeholder.com/64x48" alt="Company logo">
+                                        <img src="/assets/images/achim.png" alt="Company logo">
                                     </figure>
                                 </div>
                                 <div class="media-content">
