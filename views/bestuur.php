@@ -255,11 +255,12 @@
             </div>
         </div>
         <div class="tile is-parent is-horizontal is-12">
-            <div class="tile is-parent is-4">
+            <div class="tile is-parent is-6">
                 <div class="tile is-parent is-vertical box content">
                     <h1 class="has-text-centered">Feest</h1>
                     <div class="tile is-parent is-horizontal">
-                        <div class="tile card is-child is-vertical" onclick="location.href='mailto:feest@ceneka.be'">
+                        <div class="tile is-parent is-12">
+                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:feest@ceneka.be'">
                                 <div class="card-image">
                                     <img src="/assets/images/nick.png" alt="Placeholder image">
                                 </div>
@@ -279,38 +280,15 @@
 
                                 </div>
                             </div>
-                        
-                        
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="tile is-parent is-8">
+            <div class="tile is-parent is-6">
                 <div class="tile is-parent is-vertical box content">
                     <h1 class="has-text-centered">Web</h1>
                     <div class="tile is-parent is-horizontal">
-                        <div class="tile is-parent is-6">
-                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:web@ceneka.be?subject=[Tim Vandamme]'">
-                                <div class="card-image">
-                                    <img src="/assets/images/timvd.png" alt="Placeholder image">
-                                </div>
-                                <div class="card-content">
-                                    <div class="media">
-                                        <div class="media-content">
-                                            <p class="title is-5">Tim Vandamme</p>
-                                            <p class="subtitle is-7 is-link"><a>@theCprogrammer</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        Naast een opvallende liefde voor de programmeertaal C zijn er nog 2 kenmerken die opvallen
-                                        aan de eerste helft van ons webduo: zijn hardnekkigheid en leergierigheid. Als webbie is hij verantwoordelijk
-                                        voor het onderhoud van de site en diverse ICT-gerelateerde activiteiten.<br>
-                                        Mail: <a>web@ceneka.be</a>
-                                    </div> 
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tile is-parent is-6">
+                        <div class="tile is-parent is-12">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:web@ceneka.be?subject=[Tim Van Erum]'">
                                 <div class="card-image">
                                     <img src="/assets/images/timve.png" alt="Placeholder image">
@@ -319,7 +297,7 @@
                                     <div class="media">
                                         <div class="media-content">
                                             <p class="title is-5">Tim Van Erum</p>
-                                            <p class="subtitle is-7 is-link"><a>@SunshineIncarnate</a></p>
+                                            <p class="subtitle is-7 is-link"><a>@sunshineIncarnate</a></p>
                                         </div>
                                     </div>
                                     <div class="content">
