@@ -45,8 +45,8 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
-                                    <figure class="image is-48x48 is-marginless">
-                                        <img src="http://via.placeholder.com/48x48" alt="Company logo">
+                                    <figure class="image is-64x48 is-marginless">
+                                        <img src="http://via.placeholder.com/64x48" alt="Company logo">
                                     </figure>
                                 </div>
                                 <div class="media-content">
@@ -63,8 +63,8 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
-                                    <figure class="image is-48x48 is-marginless">
-                                        <img src="http://via.placeholder.com/48x48" alt="Company logo">
+                                    <figure class="image is-64x64">
+                                        <img src="/assets/images/louise.png" alt="Company logo">
                                     </figure>
                                 </div>
                                 <div class="media-content">

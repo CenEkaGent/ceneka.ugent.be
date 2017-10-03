@@ -29,7 +29,7 @@
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:praeses@ceneka.be'">
                                 <div class="card-image">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    <img src="/assets/images/achim.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -51,7 +51,7 @@
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:vice@ceneka.be'">
                                 <div class="card-image">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    <img src="/assets/images/louise.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -110,7 +110,7 @@
                         <div class="tile is-parent is-4">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Jeroen Flipts] '">
                                 <div class="card-image">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    <img src="/assets/images/jeroen.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -132,7 +132,7 @@
                         <div class="tile is-parent is-4">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Dennis Maes] '">
                                 <div class="card-image">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    <img src="/assets/images/dennis.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -153,7 +153,7 @@
                         <div class="tile is-parent is-4">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Aren Maes] '">
                                 <div class="card-image">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    <img src="/assets/images/aren.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -182,7 +182,7 @@
                     <h1 class="has-text-centered">Externe</h1>
                     <div class="tile card is-child is-vertical" onclick="location.href='mailto:externe@ceneka.be'">
                         <div class="card-image">
-                            <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            <img src="/assets/images/remi.png" alt="Placeholder image">
                         </div>
                         <div class="card-content">
                             <div class="media">
@@ -207,7 +207,7 @@
                     <h1 class="has-text-centered">Interne</h1>
                     <div class="tile card is-child is-vertical" onclick="location.href='mailto:interne@ceneka.be'">
                         <div class="card-image">
-                            <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            <img src="/assets/images/jarne.png" alt="Placeholder image">
                         </div>
                         <div class="card-content">
                             <div class="media">
@@ -232,7 +232,7 @@
                     <h1 class="has-text-centered">Penningmeester</h1>
                     <div class="tile card is-child is-vertical" onclick="location.href='mailto:penning@ceneka.be'">
                         <div class="card-image">
-                            <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            <img src="/assets/images/bjorn.png" alt="Placeholder image">
                         </div>
                         <div class="card-content">
                             <div class="media">
@@ -260,25 +260,26 @@
                     <h1 class="has-text-centered">Feest</h1>
                     <div class="tile is-parent is-horizontal">
                         <div class="tile card is-child is-vertical" onclick="location.href='mailto:feest@ceneka.be'">
-                            <div class="card-image">
-                                <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-5">Nick Barbé</p>
-                                        <p class="subtitle is-7 is-link"><a>@thePartyAnimal</a></p>
-                                    </div>
+                                <div class="card-image">
+                                    <img src="/assets/images/nick.png" alt="Placeholder image">
                                 </div>
-                                <div class="content">
-                                    Zelfs onder de CW'ers en elektrotechniekers zitten er lossbollen, waaronder onze eigen Nick. 
-                                    Naast de organisatie van de culturele activiteiten, gebruikt hij dan ook graag deze kennis om onze beruchte 
-                                    feestjes naar hogere sferen te brengen.<br>
-                                    Mail: <a>externe@ceneka.be</a>
-                                </div> 
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-5">Nick Barbé</p>
+                                            <p class="subtitle is-7 is-link"><a>@thePartyAnimal</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        Zelfs onder de CW'ers en elektrotechniekers zitten er lossbollen, waaronder onze eigen Nick. 
+                                        Naast de organisatie van de culturele activiteiten, gebruikt hij dan ook graag deze kennis om onze beruchte 
+                                        feestjes naar hogere sferen te brengen.<br>
+                                        Mail: <a>externe@ceneka.be</a>
+                                    </div> 
 
+                                </div>
                             </div>
-                        </div>
+                        
                         
                     </div>
                 </div>
@@ -290,7 +291,7 @@
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:web@ceneka.be?subject=[Tim Vandamme]'">
                                 <div class="card-image">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    <img src="/assets/images/timvd.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
@@ -312,7 +313,7 @@
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:web@ceneka.be?subject=[Tim Van Erum]'">
                                 <div class="card-image">
-                                    <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    <img src="/assets/images/timve.png" alt="Placeholder image">
                                 </div>
                                 <div class="card-content">
                                     <div class="media">
