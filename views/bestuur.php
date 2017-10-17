@@ -22,10 +22,10 @@
     <h1 class="title is-1 has-text-centered" style="margin-top: 1.5rem;">Bestuur CenEka</h1>
     <div class="tile is-ancestor is-vertical">
         <div class="tile is-parent">
-            <div class="tile is-parent is-8">
-                <div class="tile is-child box content is-12 is-vertical">
+            <div class="tile is-parent is-8 is-paddingless-mobile">
+                <div class="tile is-child box content is-12 is-vertical is-paddingless-mobile">
                     <h1 class="has-text-centered">Praeses | Vice-Praeses</h1>
-                    <div class="tile is-parent is-12">
+                    <div class="tile is-parent is-12 is-paddingless-mobile">
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:praeses@ceneka.be'">
                                 <div class="card-image">
@@ -73,8 +73,8 @@
                 </div>
 
             </div> 
-            <div class="tile is-parent is-4 is-vertical">
-                <div class="tile is-child">
+            <div class="tile is-parent is-4 is-vertical is-paddingless-mobile">
+                <div class="tile is-child is-paddingless-mobile">
                     <article class="content box">
                         <h1 class="has-text-centered">Medewerker worden?</h1>
                         <div class="description">
@@ -86,7 +86,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="tile is-child">
+                <div class="tile is-child is-paddingless-mobile">
                     <article class="content box">
                         <h1 class="has-text-centered">Bestuurslid worden?</h1>
                         <div class="description">
@@ -103,12 +103,12 @@
         </div>
         
         <div class="tile is-parent is-12 is-vertical">
-            <div class="tile is-parent is-12 is-vertical">
-                <div class="tile is-child box content">
+            <div class="tile is-parent is-12 is-vertical is-paddingless-mobile">
+                <div class="tile is-child box content is-paddingless-mobile">
                     <h1 class="has-text-centered">Career Team</h1>
-                    <div class="tile is-parent is-12">
+                    <div class="tile is-parent is-12 is-paddingless-mobile">
                         <div class="tile is-parent is-4">
-                            <div class="tile card is-child is-vertical" onclick="location.href='mailto:career@ceneka.be?subject=[Jeroen Flipts] '">
+                            <div class="tile card is-child is-vertical is-paddingless-mobile" onclick="location.href='mailto:career@ceneka.be?subject=[Jeroen Flipts] '">
                                 <div class="card-image">
                                     <img src="/assets/images/jeroen.png" alt="Placeholder image">
                                 </div>
@@ -177,10 +177,10 @@
             </div>
         </div>
         <div class="tile is-parent is-horizontal is-12">
-            <div class="tile is-parent is-4">
+            <div class="tile is-parent is-4 is-paddingless-mobile">
                 <div class="tile is-child box content">
                     <h1 class="has-text-centered">Externe</h1>
-                    <div class="tile card is-child is-vertical" onclick="location.href='mailto:externe@ceneka.be'">
+                    <div class="tile card is-child is-vertical is-full-mobile" onclick="location.href='mailto:externe@ceneka.be'">
                         <div class="card-image">
                             <img src="/assets/images/remi.png" alt="Placeholder image">
                         </div>
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tile is-parent is-4">
+            <div class="tile is-parent is-4 is-paddingless-mobile">
                 <div class="tile is-child box content">
                     <h1 class="has-text-centered">Interne</h1>
                     <div class="tile card is-child is-vertical" onclick="location.href='mailto:interne@ceneka.be'">
@@ -227,7 +227,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tile is-parent is-4">
+            <div class="tile is-parent is-4 is-paddingless-mobile">
                 <div class="tile is-child box content">
                     <h1 class="has-text-centered">Penningmeester</h1>
                     <div class="tile card is-child is-vertical" onclick="location.href='mailto:penning@ceneka.be'">
@@ -255,8 +255,8 @@
             </div>
         </div>
         <div class="tile is-parent is-horizontal is-12">
-            <div class="tile is-parent is-6">
-                <div class="tile is-parent is-vertical box content">
+            <div class="tile is-parent is-6 is-paddingless-mobile">
+                <div class="tile is-parent  is-paddingless-mobile is-vertical box content">
                     <h1 class="has-text-centered">Feest</h1>
                     <div class="tile is-parent is-horizontal">
                         <div class="tile is-parent is-12">
@@ -284,8 +284,8 @@
                     </div>
                 </div>
             </div>
-            <div class="tile is-parent is-6">
-                <div class="tile is-parent is-vertical box content">
+            <div class="tile is-parent is-6 is-paddingless-mobile">
+                <div class="tile is-parent is-vertical is-paddingless-mobile box content">
                     <h1 class="has-text-centered">Web</h1>
                     <div class="tile is-parent is-horizontal">
                         <div class="tile is-parent is-12">
