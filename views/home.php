@@ -16,8 +16,8 @@ if ($handle){
     if(($password = fgets($handle)) == false){
         exit(header("Location: /500/"));
     }
-    $username=str_replace("\r\n","",$username);
-    $password=str_replace("\r\n","",$password);
+    $username=str_replace("\n","",$username);
+    $password=str_replace("\n","",$password);
 }
 try {
     $host = "localhost";
