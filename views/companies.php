@@ -5,7 +5,9 @@
         <div class="content">
             <p>
                 CenEka organiseert doorheen het jaar verschillende activiteiten en daar kan U als bedrijf mee helpen!
-                We bieden verschillende pakketten aan om Uw bedrijf bekend te maken bij de studenten.
+                We bieden verschillende pakketten aan om Uw bedrijf bekend te maken bij de studenten. Ook organiseren wij het ElectroMechanics, 
+		Electronics and Computer Sciences Career & Technology event, ook bekend als EMECS, een jobbeurs voor studenten computerwetenschappen, 
+		elektrotechniek en werktuigkunde. Meer info over vindt u <a href="http://emecs.be/">hier</a>.
             </p>
             <a class="accent-left columns is-mobile" target="_blank" href="../assets/docs/sponsordossier.pdf" id="sponsor-document">
                 <div class="tile column is-narrow">
@@ -43,15 +45,13 @@
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
-                    <li>Promotiemateriaal op 1 activiteit</li>
-                    <li>1 advertentie op sociale media</li>
                     <li>2 vacatures op website</li>
                     <li>Bedrijfsbezoek mogelijk (excl. transportkosten)</li>
                     <li>Logo op alle PowerPointpresentaties</li>
                     <li>Promotiemateriaal op 2 activiteiten</li>
                     <li>2 advertenties op sociale media</li>
                     <li>1 rechtstreekse mail naar leden</li>
-                    <li>15% korting op job fair event</li>
+                    <li>15% korting op job fair event <a href="http://emecs.be/">EMECS</a></li>
                 </ul>
             </div>
             <div id="price-class-2" class="is-hidden">
@@ -59,21 +59,14 @@
                 <ul>
                     <li>Logo en beschrijving op website</li>
                     <li>Logo op alle posters</li>
-                    <li>Promotiemateriaal op 1 activiteit</li>
-                    <li>1 advertentie op sociale media</li>
-                    <li>2 vacatures op website</li>
                     <li>Bedrijfsbezoek mogelijk (excl. transportkosten)</li>
                     <li>Logo op alle PowerPointpresentaties</li>
-                    <li>Promotiemateriaal op 2 activiteiten</li>
-                    <li>2 advertenties op sociale media</li>
-                    <li>1 rechtstreekse mail naar leden</li>
-                    <li>15% korting op job fair event</li>
                     <li>Promotiemateriaal op 4 activiteiten</li>
                     <li>Ongelimiteerd aantal vacatures op website</li>
                     <li>4 advertenties op sociale media</li>
                     <li>2 rechtstreekse mails naar leden</li>
                     <li>Banner op activiteiten</li>
-                    <li>25% korting op job fair event</li>
+                    <li>25% korting op job fair event <a href="http://emecs.be/">EMECS</a></li>
                 </ul>
             </div>
             <h2>+ Persoonlijk evenement</h2>

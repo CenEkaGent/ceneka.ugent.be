@@ -8,11 +8,22 @@ $elements = explode('/', $path);
 
 function go_to_event($elements) {
     if (sizeof($elements) == 1) {
-
+        
+        $handle = fopen(".secret", "r");
+        if ($handle){
+            if(($username = fgets($handle)) !== false){
+                exit(header("Location: /500/"));
+            }
+            if(($password = fgets($handle)) !== false){
+                exit(header("Location: /500/"));
+            }
+        }
         try {
+	    $host = "localhost";
+	    $db = "ceneka";
             // Open DB connection
-            $db = new PDO('sqlite:.events.sqlite');
-
+            $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
+	     
             // Fetch data from database using SQL
             $sql = 'SELECT * FROM events WHERE shortName = :shortName';
             $statement = $db->prepare($sql);
@@ -34,7 +45,7 @@ function go_to_event($elements) {
             // Close DB connection
             $db = null;
         } catch (Exception $e) {
-            exit(header("Location: /500/"));
+ 	    exit(header("Location: /500/"));
         }
     } else {
         $descriptor = "404 Not Found";

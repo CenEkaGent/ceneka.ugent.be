@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+    include_once('CAS/CAS-1.3.3/CAS.php');
+    phpCAS::client(SAML_VERSION_1_1,'login.ugent.be',443,'', true, 'saml');
+    phpCAS::handleLogoutRequests(true, array('cas1.ugent.be','cas2.ugent.be','cas3.ugent.be','cas4.ugent.be','cas5.ugent.be','cas6.ugent.be'));
+    phpCAS::setCasServerCACert('/etc/ssl/certs/ca-certificates.crt');
+?>
 <html lang="nl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,6 +80,15 @@
                                 </span>
                             </a>
                         </div>
+			<!--<?php if (phpCAS::isAuthenticated()): ?>
+                            <a class="button">
+                                <h><?php phpCAS::getUser()?></h>
+                            </a>
+                        <?php else: ?>
+                            <a class="button" href="<?php echo phpCAS::getServerLoginUrl()?>" target="_blank">
+                                <h>Login</h>
+                            </a>
+                        <?php endif ?>-->
                     </div>
                 </div>
             </header>

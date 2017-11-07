@@ -246,7 +246,7 @@
                                 vergaderingen en activiteiten die CenEka organiseert, maar combineert dit met een 
                                 uitzonderlijk scherp oog voor detail. Daarnaast moet je ook bij hem zijn voor een
                                 avond vol pannekoeken en K3.<br>
-                                Mail: <a>interne@ceneka.be</a>
+                                Mail: <a>penning@ceneka.be</a>
                             </div> 
 
                         </div>
@@ -275,7 +275,7 @@
                                         Zelfs onder de CW'ers en elektrotechniekers zitten er lossbollen, waaronder onze eigen Nick. 
                                         Naast de organisatie van de culturele activiteiten, gebruikt hij dan ook graag deze kennis om onze beruchte 
                                         feestjes naar hogere sferen te brengen.<br>
-                                        Mail: <a>externe@ceneka.be</a>
+                                        Mail: <a>feest@ceneka.be</a>
                                     </div> 
 
                                 </div>

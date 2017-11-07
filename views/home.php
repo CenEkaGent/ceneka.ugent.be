@@ -8,9 +8,20 @@ include_once 'layouts/main/header.php';
 // Include Event model for easier access
 include_once 'models/event.php';
 
+$handle = fopen(".secret", "r");
+if ($handle){
+    if(($username = fgets($handle)) !== false){
+        exit(header("Location: /500/"));
+    }
+    if(($password = fgets($handle)) !== false){
+        exit(header("Location: /500/"));
+    }
+}
 try {
+    $host = "localhost";
+    $db = "ceneka";
     // Open DB connection
-    $db = new PDO('sqlite:.events.sqlite');
+    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
 
     // Fetch next event from database using SQL
     $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
@@ -19,17 +30,19 @@ try {
         throw new Exception("Database error.");
 
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
+    //$statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => now()));
     $next_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
-    
+     
     // Fetch previous event from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime <= :currentTime ORDER BY :orderColumn LIMIT 2';
+    $sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY :orderColumn DESC LIMIT 1';
+
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
 
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
     $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
-
+    
     // Display previous event when no future events are present
     if (sizeof($next_events) == 0)
         $next_events = [array_shift($previous_events)];
@@ -37,7 +50,8 @@ try {
     // Close DB connection
     $db = null;
 } catch (Exception $e) {
-    exit(header("Location: /500/"));
+    echo $e->getMessage();
+    // exit(header("Location: /500/"));
 }
 ?>
 
@@ -45,7 +59,7 @@ try {
     <div class="tile is-vertical is-ancestor">
         <div class="tile is-parent is-12">
             <div id="next-ev" class="tile is-child box columns ceneka-red is-paddingless fixed-height265 event" onclick="location.href='/events/<?php print $next_events[0]->shortName ?>/'">
-                <img id="next-ev-img" class="column is-narrow is-full-mobile" src="<?php echo $next_events[0]->images[0]; ?>" alt="">
+                <img id="next-ev-img" class="column is-narrow is-full-mobile is-4by3" src="<?php echo $next_events[0]->images[0]; ?>" alt="">
                 <article class="content column">
                     <h1 id="next-ev-title" class="has-text-centered-mobile"><?php echo $next_events[0]->name?></h1>
                     <div id="next-ev-description" class="description">
