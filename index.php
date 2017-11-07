@@ -11,10 +11,10 @@ function go_to_event($elements) {
         
         $handle = fopen(".secret", "r");
         if ($handle){
-            if(($username = fgets($handle)) !== false){
+            if(($username = fgets($handle)) == false){
                 exit(header("Location: /500/"));
             }
-            if(($password = fgets($handle)) !== false){
+            if(($password = fgets($handle)) == false){
                 exit(header("Location: /500/"));
             }
         }
