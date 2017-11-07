@@ -91,6 +91,12 @@ a {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .is-paddingless-mobile {
+        padding: 0 !important;
+    }
+}
+
 .name.is-hidden-tablet {
     width: 100% !important;
     left: unset;

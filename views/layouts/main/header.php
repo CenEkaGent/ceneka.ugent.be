@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<?php
-    include_once('CAS/CAS-1.3.3/CAS.php');
-    phpCAS::client(SAML_VERSION_1_1,'login.ugent.be',443,'', true, 'saml');
-    phpCAS::handleLogoutRequests(true, array('cas1.ugent.be','cas2.ugent.be','cas3.ugent.be','cas4.ugent.be','cas5.ugent.be','cas6.ugent.be'));
-    phpCAS::setCasServerCACert('/etc/ssl/certs/ca-certificates.crt');
+<?php 
+    include_once 'cas-data.php';
+    if (phpCAS::isAuthenticated()){
+   	    $user = phpCAS::getUser();
+        $attr = phpCAS::getAttributes();
+    }
+    else{
+        $user= Null;
+        $attr= Null;
+    }
 ?>
 <html lang="nl"><head>
     <meta charset="UTF-8">
@@ -80,16 +85,19 @@
                                 </span>
                             </a>
                         </div>
-			<!--<?php if (phpCAS::isAuthenticated()): ?>
-                            <a class="button">
-                                <h><?php phpCAS::getUser()?></h>
-                            </a>
-                        <?php else: ?>
-                            <a class="button" href="<?php echo phpCAS::getServerLoginUrl()?>" target="_blank">
-                                <h>Login</h>
-                            </a>
-                        <?php endif ?>-->
-                    </div>
-                </div>
-            </header>
-            <main class="section" id="main-section">
+			<?php if (is_null($user)): ?>
+			    <a class="button" href="<?php echo phpCAS::getServerLoginUrl()?>" target="_blank">
+                    <h>Login</h>
+                </a>
+            <?php else: ?>
+                <!-- TODO: fix this: add a logout page that gets called via form that handles 
+                a logout and returns to this page-->
+                <al>Logged in as: <?php echo($user) ?>  </al>
+                <a class="button" href="<?php echo phpCAS::getServerLogoutUrl()?>" target="_blank">
+                    <h>Logout</h>
+                </a>
+            <?php endif ?>
+            </div>
+        </div>
+    </header>
+<main class="section" id="main-section">

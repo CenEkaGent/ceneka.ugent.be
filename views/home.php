@@ -10,12 +10,14 @@ include_once 'models/event.php';
 
 $handle = fopen(".secret", "r");
 if ($handle){
-    if(($username = fgets($handle)) !== false){
+    if(($username = fgets($handle)) == false){
         exit(header("Location: /500/"));
     }
-    if(($password = fgets($handle)) !== false){
+    if(($password = fgets($handle)) == false){
         exit(header("Location: /500/"));
     }
+    $username=str_replace("\n","",$username);
+    $password=str_replace("\n","",$password);
 }
 try {
     $host = "localhost";
@@ -34,13 +36,13 @@ try {
     $next_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
      
     // Fetch previous event from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY :orderColumn DESC LIMIT 1';
+    $sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
 
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
 
-    $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
+    $statement->execute(array(':currentTime' => date('Y-m-d H:i:s')));
     $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
     
     // Display previous event when no future events are present
