@@ -7,6 +7,7 @@ include_once 'layouts/main/header.php';
 <?php
 // Include Event model for easier access
 include_once 'models/event.php';
+include_once 'models/application.php';
 
 try {
     // Open DB connection
@@ -29,6 +30,14 @@ try {
 
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
     $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+
+    // Fetch data from database using SQL
+    $sql = 'SELECT * FROM applications ORDER BY :orderColumn';
+    $statement = $db->prepare($sql);
+    if (!$statement)
+        throw new Exception("Database error.");
+    $statement->execute(array(':orderColumn' => 'priority'));
+    $applications = $statement->fetchAll(PDO::FETCH_CLASS, 'Application');
 
     // Display previous event when no future events are present
     if (sizeof($next_events) == 0)
@@ -76,70 +85,73 @@ try {
                         <a href="applications/">Jobaanbiedingen</a>
                     </h1>
                     <div class="teaser has-text-centered">
-                        <h1 class="title" style="margin-top: 300px; margin-bottom: 370px;">Stay tuned for more!</h1>
-                        <!--<div class="card">
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-48x48 is-marginless">
-                                            <img src="http://via.placeholder.com/48x48" alt="Company logo">
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4">Job title</p>
-                                        <p class="subtitle is-6">Company</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, adipisci. Aperiam optio officiis accusantium atque?
-                                    <a>#keyword1</a> <a>#keyword2</a>
-                                    <br>
-                                    <small>Time of creation</small>
-                                </div>
-                            </div>
-                        </div>
+                        <?php $application = $applications[0];?>
                         <div class="card">
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-left">
                                         <figure class="image is-48x48 is-marginless">
-                                            <img src="http://via.placeholder.com/48x48" alt="Company logo">
+                                            <img src="<?php print $application->logo; ?>" alt="Company logo">
                                         </figure>
                                     </div>
                                     <div class="media-content">
-                                        <p class="title is-4">Job title</p>
-                                        <p class="subtitle is-6">Company</p>
+                                        <p class="title is-4"><?php print $application->title; ?></p>
+                                        <p class="subtitle is-6"><?php print $application->company; ?></p>
                                     </div>
                                 </div>
                                 <div class="content">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, adipisci. Aperiam optio officiis accusantium atque?
-                                    <a>#keyword1</a> <a>#keyword2</a>
+                                    <?php print $application->description; ?>
+                                    <?php print $application->topics; ?>
                                     <br>
-                                    <small>Time of creation</small>
+                                    <b>Locatie: <?php print $application->location; ?></b>
                                 </div>
                             </div>
                         </div>
+                        <?php $application = $applications[1];?>
                         <div class="card">
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-left">
                                         <figure class="image is-48x48 is-marginless">
-                                            <img src="http://via.placeholder.com/48x48" alt="Company logo">
+                                            <img src="<?php print $application->logo; ?>" alt="Company logo">
                                         </figure>
                                     </div>
                                     <div class="media-content">
-                                        <p class="title is-4">Job title</p>
-                                        <p class="subtitle is-6">Company</p>
+                                        <p class="title is-4"><?php print $application->title; ?></p>
+                                        <p class="subtitle is-6"><?php print $application->company; ?></p>
                                     </div>
                                 </div>
                                 <div class="content">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, adipisci. Aperiam optio officiis accusantium atque?
-                                    <a>#keyword1</a> <a>#keyword2</a>
+                                    <?php print $application->description; ?>
+                                    <?php print $application->topics; ?>
                                     <br>
-                                    <small>Time of creation</small>
+                                    <b>Locatie: <?php print $application->location; ?></b>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
+                        <!--<?php $application = $applications[2];?>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48 is-marginless">
+                                            <img src="<?php print $application->logo; ?>" alt="Company logo">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4"><?php print $application->title; ?></p>
+                                        <p class="subtitle is-6"><?php print $application->company; ?></p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <?php print $application->description; ?>
+                                    <?php print $application->topics; ?>
+                                    <br>
+                                    <b>Locatie: <?php print $application->location; ?></b>
+                                </div>
+                            </div>
+                        </div>
+                        -->
                     </div>
                     <br>
                     <div class="has-text-right">

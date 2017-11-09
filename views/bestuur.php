@@ -24,7 +24,7 @@
         <div class="tile is-parent">
             <div class="tile is-parent is-8 is-paddingless-mobile">
                 <div class="tile is-child box content is-12 is-vertical is-paddingless-mobile">
-                    <h1 class="has-text-centered">Praeses | Vice-Praeses</h1>
+                    <h1 class="has-text-centered">Praeses en Vice-Praeses</h1>
                     <div class="tile is-parent is-12 is-paddingless-mobile">
                         <div class="tile is-parent is-6">
                             <div class="tile card is-child is-vertical" onclick="location.href='mailto:praeses@ceneka.be'">
