@@ -9,7 +9,8 @@ include_once 'models/application.php';
 
 try {
     // Open DB connection
-    $db = new PDO('sqlite:.events.sqlite');
+    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
+    # $db = new PDO('sqlite:.events.sqlite'); //For development purposes
 
     // Fetch data from database using SQL
     $sql = 'SELECT * FROM applications ORDER BY :orderColumn';
