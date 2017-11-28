@@ -126,6 +126,10 @@ if (empty($elements[0])) {
             $descriptor = 'Evenementen';
             include 'views/events.php';
             break;
+        case 'lid':
+            $descriptor = 'Nieuw Lid';
+            include 'views/lid.php';
+            break;
         case '500':
             $descriptor = "500 Internal Server Error";
             header('HTTP/1.1 500 Internal Server Error');
