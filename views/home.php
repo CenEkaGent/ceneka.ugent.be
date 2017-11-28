@@ -24,7 +24,8 @@ try {
     $host = "localhost";
     $db = "ceneka";
     // Open DB connection
-    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
+    # $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
+    $db = new PDO('sqlite:.events.sqlite'); // For development purposes
 
     // Fetch next event from database using SQL
     $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
