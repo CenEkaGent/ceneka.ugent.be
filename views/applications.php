@@ -17,6 +17,7 @@ if ($handle){
     }
     $username=str_replace("\n","",$username);
     $password=str_replace("\n","",$password);
+}
     
 try {
     $host = "localhost";
