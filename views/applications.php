@@ -7,7 +7,20 @@ include_once 'layouts/main/header.php'
 // Include Event model for easier access
 include_once 'models/application.php';
 
+$handle = fopen(".secret", "r");
+if ($handle){
+    if(($username = fgets($handle)) == false){
+        exit(header("Location: /500/"));
+    }
+    if(($password = fgets($handle)) == false){
+        exit(header("Location: /500/"));
+    }
+    $username=str_replace("\n","",$username);
+    $password=str_replace("\n","",$password);
+    
 try {
+    $host = "localhost";
+    $db = "ceneka";
     // Open DB connection
     $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
     # $db = new PDO('sqlite:.events.sqlite'); //For development purposes
