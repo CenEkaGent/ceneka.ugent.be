@@ -8,10 +8,23 @@ include_once 'layouts/main/header.php';
 // Include Event model for easier access
 include_once 'models/event.php';
 
+$handle = fopen(".secret", "r");
+if ($handle){
+    if(($username = fgets($handle)) == false){
+        exit(header("Location: /500/"));
+    }
+    if(($password = fgets($handle)) == false){
+        exit(header("Location: /500/"));
+    }
+    $username=str_replace("\n","",$username);
+    $password=str_replace("\n","",$password);
+}
 try {
+    $host = "localhost";
+    $db = "ceneka";
     // Open DB connection
-    $db = new PDO('sqlite:.events.sqlite');
-
+    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
+    
     // Fetch data from database using SQL
     $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn';
     $statement = $db->prepare($sql);
@@ -26,11 +39,11 @@ try {
         throw new Exception("Database error.");
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
     $pastEvents = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
-
     // Close DB connection
     $db = null;
 } catch (Exception $e) {
-    exit(header("Location: /500/"));
+    echo $e->getTraceAsString();
+    //exit(header("Location: /500/"));
 }
 
 $classes = ["", " ceneka-red", " ceneka-grey", ""];

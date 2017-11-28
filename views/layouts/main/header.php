@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php 
+    include_once 'cas-data.php';
+    if (phpCAS::isAuthenticated()){
+   	    $user = phpCAS::getUser();
+        $attr = phpCAS::getAttributes();
+    }
+    else{
+        $user= Null;
+        $attr= Null;
+    }
+?>
 <html lang="nl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +85,19 @@
                                 </span>
                             </a>
                         </div>
-                    </div>
-                </div>
-            </header>
-            <main class="section" id="main-section">
+			<?php if (is_null($user)): ?>
+			    <a class="button" href="<?php echo phpCAS::getServerLoginUrl()?>" target="_blank">
+                    <h>Login</h>
+                </a>
+            <?php else: ?>
+                <!-- TODO: fix this: add a logout page that gets called via form that handles 
+                a logout and returns to this page-->
+                <al>Logged in as: <?php echo($user) ?>  </al>
+                <a class="button" href="<?php echo phpCAS::getServerLogoutUrl()?>" target="_blank">
+                    <h>Logout</h>
+                </a>
+            <?php endif ?>
+            </div>
+        </div>
+    </header>
+<main class="section" id="main-section">
