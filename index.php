@@ -100,7 +100,7 @@ function go_to_event($elements, $attr = Null) {
 
 if (empty($elements[0])) {
     include 'views/home.php';
-} else if (sizeof($elements) == 1) {
+} else {
     switch (array_shift($elements)) {
         case 'about':
             $descriptor = 'About';
@@ -135,13 +135,6 @@ if (empty($elements[0])) {
             header('HTTP/1.1 500 Internal Server Error');
             include 'views/500.php';
             break;
-        default:
-            $descriptor = "404 Not Found";
-            header('HTTP/1.1 404 Not Found');
-            include 'views/404.php';
-    }
-} else if (sizeof($elements) == 2) {
-    switch (array_shift($elements)) {
         case 'events':
             go_to_event($elements, $attr);
             break;
@@ -150,10 +143,6 @@ if (empty($elements[0])) {
             header('HTTP/1.1 404 Not Found');
             include 'views/404.php';
     }
-} else {
-    $descriptor = "404 Not Found";
-    header('HTTP/1.1 404 Not Found');
-    include 'views/404.php';
 }
 
 ?>
