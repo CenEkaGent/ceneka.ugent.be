@@ -99,6 +99,7 @@ function go_to_event($elements, $attr = Null) {
 }
 
 if (empty($elements[0])) {
+    print_r($elements);
     include 'views/home.php';
 } else {
     switch (array_shift($elements)) {
