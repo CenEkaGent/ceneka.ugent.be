@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
     
 }
-$sql = 'SELECT * FROM events WHERE event_id = :eventID';
+$sql = 'SELECT * FROM events WHERE id = :eventID';
 $statement = $db->prepare($sql);
 if (!$statement)
     throw new Exception("Database error.");
