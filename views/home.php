@@ -29,7 +29,7 @@ try {
     $query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
     $swap = array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
-    $previous_events = getDBObjects($query, $swap, $type, $username, $password);
+    $next_events = getDBObjects($query, $swap, $type, $username, $password);
      
     // Fetch previous event from database using SQL
     /*$sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
