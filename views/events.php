@@ -9,6 +9,8 @@ include_once 'layouts/main/header.php';
 include_once 'models/event.php';
 
 try {
+    //Note similiarity with try catch block in home.php, merge into function possible
+
     //Fetch events newer as current date from DB
     $query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn';
     $swap = array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s'));
@@ -20,7 +22,7 @@ try {
     $swap = array(':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
     $pastEvents = getDBObjects($query, $swap, $type);
-    
+
 } catch (Exception $e) {
     echo $e->getTraceAsString();
     //exit(header("Location: /500/"));
