@@ -71,8 +71,9 @@ function go_to_event($elements, $attr = Null) {
             }
             // Close DB connection
             $db = null;
-        } catch (Exception $e) {
- 	    exit(header("Location: /500/"));
+        } catch (Exception $e) {            
+         exit(header("Location: /500/"));
+         print "Hiereeee";
         }
     } else {
         $descriptor = "404 Not Found";
