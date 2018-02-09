@@ -30,19 +30,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 throw new Exception("Database error.");
             $statement->execute(array(':event' => $event->id, ':user'=>$info[0]->id));            
         }
-        $sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
-        WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
+        $sql = 'SELECT canSubscribe FROM events WHERE event_id = :eventID';
         $statement = $db->prepare($sql);
         if (!$statement)
             throw new Exception("Database error.");
-        $statement->execute(array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id));
-        $status_t = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
-        if (sizeof($status_t)==1){
-            $status = True;
+        $statement->execute(array(':eventID'=>$data[0]->id));
+        $registerable = $statement->fetchAll(PDO::FETCH_CLASS, 'Event')[0];
+        if ($registerable == 1){
+            $sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
+            WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
+            $statement = $db->prepare($sql);
+            if (!$statement)
+                throw new Exception("Database error.");
+            $statement->execute(array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id));
+            $status_t = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+            if (sizeof($status_t)==1){
+                $status = True;
+            }
+            else{
+                $status = False;
+            }
         }
-        else{
-            $status = False;
-        }            
+        else {
+            $status = Null;
+        }
     }
     
 }

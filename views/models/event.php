@@ -14,6 +14,7 @@ class Event {
     public $locationUrl;
     public $facebookUrl;
     public $longDescription;
+    public $canSubscribe;
 
     function __construct() {
         $this->id = (int)$this->id;
