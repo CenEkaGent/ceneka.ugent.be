@@ -10,7 +10,7 @@ include_once 'models/event.php';
 include_once 'models/application.php';
 
 try {
-    $host = "localhost";
+    /*$host = "localhost";
     $db = "ceneka";
     // Open DB connection
     $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
@@ -24,26 +24,26 @@ try {
 
     $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
     //$statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => now()));
-    $next_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+    $next_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
 
-    /*$query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
+    $query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
     $swap = array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
-    $next_events = getDBObjects($query, $swap, $type, $username, $password);*/
+    $next_events = getDBObjects($query, $swap, $type, $username, $password);
      
     // Fetch previous event from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
+    /*$sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
 
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
 
     $statement->execute(array(':currentTime' => date('Y-m-d H:i:s')));
-    $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
-    /*$query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
+    $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
+    $query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
     $swap = array(':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
-    $previous_events = getDBObjects($query, $swap, $type, $username, $password);*/
+    $previous_events = getDBObjects($query, $swap, $type, $username, $password);
 
     // Fetch data from database using SQL
     $sql = 'SELECT * FROM applications ORDER BY :orderColumn';

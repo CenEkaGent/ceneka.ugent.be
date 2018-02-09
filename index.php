@@ -16,7 +16,6 @@ $path = rtrim($path, '/');
 $elements = explode('/', $path);
 function go_to_event($elements, $attr = Null) {
     global $username, $password;
-    print $elements;
     if (sizeof($elements) == 1) {
         
         try {
