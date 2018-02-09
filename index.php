@@ -15,6 +15,7 @@ $path = ltrim($_SERVER['REQUEST_URI'], '/');
 $path = rtrim($path, '/');
 $elements = explode('/', $path);
 function go_to_event($elements, $attr = Null) {
+    print $elements;
     if (sizeof($elements) == 1) {
         
         try {
@@ -73,7 +74,6 @@ function go_to_event($elements, $attr = Null) {
             $db = null;
         } catch (Exception $e) {            
          exit(header("Location: /500/"));
-         print "Hiereeee";
         }
     } else {
         $descriptor = "404 Not Found";
