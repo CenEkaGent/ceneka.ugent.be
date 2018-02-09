@@ -19,44 +19,63 @@ function go_to_event($elements, $attr = Null) {
     if (sizeof($elements) == 1) {
         
         try {
-	    $host = "localhost";
-	    $db = "ceneka";
+	        /*$host = "localhost";
+	        $db = "ceneka";
             // Open DB connection
             $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
-	     
-            // Fetch data from database using SQL
+	        // Fetch data from database using SQL
             $sql = 'SELECT * FROM events WHERE shortName = :shortName';
             $statement = $db->prepare($sql);
             if (!$statement)
-                throw new Exception("Database error.");
+            throw new Exception("Database error.");
             $statement->execute(array(':shortName' => $elements[0]));
-            $data = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+            $data = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
+
+            //Fetch events newer as current date from DB
+            $query = 'SELECT * FROM events WHERE shortName = :shortName';
+            $swap = array(':shortName' => $elements[0]);
+            $type = 'Event';
+            $data = getDBObjects($query, $swap, $type);
+        
             if (!is_null($attr) && sizeof($data == 1)){
-                $sql = 'SELECT * FROM leden WHERE studentennummer = :studnummer';
+                /*$sql = 'SELECT * FROM leden WHERE studentennummer = :studnummer';
                 $statement = $db->prepare($sql);
                 if (!$statement)
                     throw new Exception("Database error.");
                 $statement->execute(array(':studnummer' => $attr['ugentStudentID']));
-                $info = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+                $info = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
+            
+                $query = 'SELECT * FROM leden WHERE studentennummer = :studnummer';
+                $swap = array(':studnummer' => $attr['ugentStudentID']);
+                $type = 'Event';
+                $info = getDBObjects($query, $swap, $type);
+
                 if (sizeof($info) != 1){
                     print $databaseerrorshouldnthappen;
                     $status = Null;
                 }
                 else {
-                    $sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
+                    /*$sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
                     WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
                     $statement = $db->prepare($sql);
                     if (!$statement)
                         throw new Exception("Database error.");
                     $statement->execute(array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id));
-                    $status_t = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+                    $status_t = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
+                
+                    $query = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
+                    WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
+                    $swap = array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id);
+                    $type = 'Event';
+                    $status_t = getDBObjects($query, $swap, $type);
+
                     if (sizeof($status_t)==1){
                         $status = True;
                     }
                     else{
                         $status = False;
                     }
-                }    
+                }       
             }
             else {
                 $status = Null;
@@ -70,10 +89,8 @@ function go_to_event($elements, $attr = Null) {
                 $descriptor = $event->name;
                 include 'views/event-page.php';
             }
-            // Close DB connection
-            $db = null;
         } catch (Exception $e) {            
-         exit(header("Location: /500/"));
+            exit(header("Location: /500/"));
         }
     } else {
         $descriptor = "404 Not Found";
