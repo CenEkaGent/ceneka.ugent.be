@@ -19,35 +19,19 @@ function go_to_event($elements, $attr = Null) {
     if (sizeof($elements) == 1) {
         
         try {
-	        /*$host = "localhost";
-	        $db = "ceneka";
-            // Open DB connection
-            $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
-	        // Fetch data from database using SQL
-            $sql = 'SELECT * FROM events WHERE shortName = :shortName';
-            $statement = $db->prepare($sql);
-            if (!$statement)
-            throw new Exception("Database error.");
-            $statement->execute(array(':shortName' => $elements[0]));
-            $data = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
 
-            //Fetch events newer as current date from DB
+            //Get events where name is the same as shortname used in url
             $query = 'SELECT * FROM events WHERE shortName = :shortName';
             $swap = array(':shortName' => $elements[0]);
             $type = 'Event';
             $data = getDBObjects($query, $swap, $type);
         
             if (!is_null($attr) && sizeof($data == 1)){
-                /*$sql = 'SELECT * FROM leden WHERE studentennummer = :studnummer';
-                $statement = $db->prepare($sql);
-                if (!$statement)
-                    throw new Exception("Database error.");
-                $statement->execute(array(':studnummer' => $attr['ugentStudentID']));
-                $info = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
-            
+                
+                //Get members with current studentnumber
                 $query = 'SELECT * FROM leden WHERE studentennummer = :studnummer';
                 $swap = array(':studnummer' => $attr['ugentStudentID']);
-                $type = 'Event';
+                $type = 'Lid';
                 $info = getDBObjects($query, $swap, $type);
 
                 if (sizeof($info) != 1){
@@ -55,14 +39,7 @@ function go_to_event($elements, $attr = Null) {
                     $status = Null;
                 }
                 else {
-                    /*$sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
-                    WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
-                    $statement = $db->prepare($sql);
-                    if (!$statement)
-                        throw new Exception("Database error.");
-                    $statement->execute(array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id));
-                    $status_t = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
-                
+                    //check if person registered
                     $query = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
                     WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
                     $swap = array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id);
