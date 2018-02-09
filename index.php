@@ -1,11 +1,8 @@
 <?php
-
 // $attr['ugentStudentID'] is het studentennummer
-
 // Include Event model for easier access
 include_once 'cas-data.php';
 include_once 'views/models/event.php';
-
 if (phpCAS::isAuthenticated()){
     $user = phpCAS::getUser();
     $attr = phpCAS::getAttributes();
@@ -14,11 +11,9 @@ else{
  $user= Null;
  $attr= Null;
 }
-
 $path = ltrim($_SERVER['REQUEST_URI'], '/');
 $path = rtrim($path, '/');
 $elements = explode('/', $path);
-
 function go_to_event($elements, $attr = Null) {
     if (sizeof($elements) == 1) {
         
@@ -85,7 +80,6 @@ function go_to_event($elements, $attr = Null) {
                 $descriptor = $event->name;
                 include 'views/event-page.php';
             }
-
             // Close DB connection
             $db = null;
         } catch (Exception $e) {
@@ -97,10 +91,9 @@ function go_to_event($elements, $attr = Null) {
         include 'views/404.php';
     }
 }
-
 if (empty($elements[0])) {
     include 'views/home.php';
-} else {
+} else if (sizeof($elements) == 1) {
     switch (array_shift($elements)) {
         case 'about':
             $descriptor = 'About';
@@ -135,6 +128,13 @@ if (empty($elements[0])) {
             header('HTTP/1.1 500 Internal Server Error');
             include 'views/500.php';
             break;
+        default:
+            $descriptor = "404 Not Found";
+            header('HTTP/1.1 404 Not Found');
+            include 'views/404.php';
+    }
+} else if (sizeof($elements) == 2) {
+    switch (array_shift($elements)) {
         case 'events':
             go_to_event($elements, $attr);
             break;
@@ -143,6 +143,9 @@ if (empty($elements[0])) {
             header('HTTP/1.1 404 Not Found');
             include 'views/404.php';
     }
+} else {
+    $descriptor = "404 Not Found";
+    header('HTTP/1.1 404 Not Found');
+    include 'views/404.php';
 }
-
 ?>
