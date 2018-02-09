@@ -10,7 +10,7 @@ $handle = fopen(".secret", "r");
 if ($handle){
     if(($username = fgets($handle)) == false){
         echo "Hier";
-        exit(header("Location: /500/"));
+        exit(header("Location: /400/"));
     }
     if(($password = fgets($handle)) == false){
         
