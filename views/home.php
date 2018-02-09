@@ -38,7 +38,7 @@ try {
     $query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
     $swap = array(':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
-    $previous_events = getDBObjects($query, $swap, $type);
+    $previous_events = getDBObjects($query, $swap, $type, $username, $password);
 
     // Fetch data from database using SQL
     $sql = 'SELECT * FROM applications ORDER BY :orderColumn';
