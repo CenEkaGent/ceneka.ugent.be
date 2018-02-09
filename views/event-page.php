@@ -29,14 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 throw new Exception("Database error.");
             $statement->execute(array(':event' => $event->id, ':user'=>$info[0]->id));            
         }
-        $sql = 'SELECT canSubscribe FROM events WHERE event_id = :eventID';
+        $sql = 'SELECT * FROM events WHERE event_id = :eventID';
         $statement = $db->prepare($sql);
         if (!$statement)
             throw new Exception("Database error.");
         $statement->execute(array(':eventID'=>$data[0]->id));
-        $registerable = $statement->fetchAll(PDO::FETCH_CLASS, 'Event')[0];
-        echo $registerable;
-        if ($registerable == 1){
+        $registerable = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+
+        if (sizeof($registerable) == 1 && $registerable[0]['canSubscribe'] == 1){
             $sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
             WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
             $statement = $db->prepare($sql);
