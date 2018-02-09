@@ -86,7 +86,7 @@ if ($startTime->format('Y-m-d') == $endTime->format('Y-m-d')) {
             <?php } ?>
         </ul>
         <br>
-        <?php if (is_null($status)):?>
+        <?php if (is_null($status) or is_null($user)):?>
         <?php else :?>
         <form method="post" action="<?php $_SERVER['REQUEST_URI']?>" form="form1">
             <button type="submit" value="Submit">                
