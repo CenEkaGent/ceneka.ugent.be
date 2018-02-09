@@ -8,22 +8,13 @@ include_once 'layouts/main/header.php'
 include_once 'models/application.php';
 
 try {
-    $host = "localhost";
-    $db = "ceneka";
-    // Open DB connection
-    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
-    # $db = new PDO('sqlite:.events.sqlite'); //For development purposes
 
-    // Fetch data from database using SQL
-    $sql = 'SELECT * FROM applications ORDER BY :orderColumn';
-    $statement = $db->prepare($sql);
-    if (!$statement)
-        throw new Exception("Database error.");
-    $statement->execute(array(':orderColumn' => 'priority'));
-    $applications = $statement->fetchAll(PDO::FETCH_CLASS, 'Application');
+    //Fetch events newer as current date from DB
+    $query = 'SELECT * FROM applications ORDER BY :orderColumn';
+    $swap = array(':orderColumn' => 'priority');
+    $type = 'Application';
+    $next_events = getDBObjects($query, $swap, $type);
 
-    // Close DB connection
-    $db = null;
 } catch (Exception $e) {
     exit(header("Location: /500/"));
 }

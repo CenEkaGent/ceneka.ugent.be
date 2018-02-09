@@ -32,10 +32,10 @@ try {
     // Display previous event when no future events are present
     if (sizeof($next_events) == 0)
         $next_events = [array_shift($previous_events)];
-        
+
 } catch (Exception $e) {
     echo $e->getMessage();
-    // exit(header("Location: /500/"));
+    exit(header("Location: /500/"));
 }
 ?>
 
