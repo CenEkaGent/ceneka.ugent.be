@@ -45,13 +45,19 @@ try {
     $type = 'Event';
     $previous_events = getDBObjects($query, $swap, $type);
 
+    /*
     // Fetch data from database using SQL
     $sql = 'SELECT * FROM applications ORDER BY :orderColumn';
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
     $statement->execute(array(':orderColumn' => 'priority'));
-    $applications = $statement->fetchAll(PDO::FETCH_CLASS, 'Application');
+    $applications = $statement->fetchAll(PDO::FETCH_CLASS, 'Application');*/
+
+    $query = 'SELECT * FROM applications ORDER BY :orderColumn';
+    $swap = array(':orderColumn' => 'priority');
+    $type = 'Application';
+    $applications = getDBObjects($query, $swap, $type);
 
     // Display previous event when no future events are present
     if (sizeof($next_events) == 0)
