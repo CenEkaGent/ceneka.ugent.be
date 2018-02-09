@@ -9,11 +9,11 @@ include_once 'models/application.php';
 
 try {
 
-    //Fetch events newer as current date from DB
+    //Fetch all applications from DB
     $query = 'SELECT * FROM applications ORDER BY :orderColumn';
     $swap = array(':orderColumn' => 'priority');
     $type = 'Application';
-    $next_events = getDBObjects($query, $swap, $type);
+    $applications = getDBObjects($query, $swap, $type);
 
 } catch (Exception $e) {
     exit(header("Location: /500/"));
