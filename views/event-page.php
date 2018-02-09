@@ -1,9 +1,10 @@
 <?php include_once 'layouts/main/header.php'; ?>
 
-<?php 
-// db connection
+<?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     
+
+    //get all members with current select studentID (should be at most 1)
     $query = 'SELECT * FROM leden WHERE studentennummer = :studnummer';
     $swap = array(':studnummer' => $attr['ugentStudentID']);
     $type = 'Event';
@@ -15,12 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             echo('Something went wrong');
         }
         elseif ($status == 0){
-            /*$sql = 'INSERT INTO registraties VALUES (:event, :user)';
-            $statement = $db->prepare($sql);
-            if (!$statement)
-                throw new Exception("Database error.");
-            $statement->execute(array(':event' => $event->id, ':user'=>$info[0]->id));*/
             
+            //if not registered yet, insert a new registration since a post was used
             $query = 'INSERT INTO registraties VALUES (:event, :user)';
             $swap = array(':event' => $event->id, ':user'=>$info[0]->id);
             $type = 'Registration';
@@ -28,43 +25,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         }
         elseif($status == 1) {
-            /*$sql = 'DELETE FROM registraties WHERE event_id = :event AND leden_id = :user';
-            $statement = $db->prepare($sql);
-            if (!$statement)
-                throw new Exception("Database error.");
-            $statement->execute(array(':event' => $event->id, ':user'=>$info[0]->id)); */ 
-            
+
+            //else delete from db
             $query = 'DELETE FROM registraties WHERE event_id = :event AND leden_id = :user';
             $swap = array(':event' => $event->id, ':user'=>$info[0]->id);
             $type = 'Registration';
-            $discard = getDBObjects($query, $swap, $type);    
+            $discard = getDBObjects($query, $swap, $type);
+
         }
         
     }
     
 }
 
-/*$sql = 'SELECT * FROM events WHERE id = :eventID';
-$statement = $db->prepare($sql);
-if (!$statement)
-    throw new Exception("Database error.");
-$statement->execute(array(':eventID'=>$data[0]->id));
-$registerable = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
-
+//select event with current event id (should be at most one)
 $query = 'SELECT * FROM events WHERE id = :eventID';
 $swap = array(':eventID'=>$data[0]->id);
 $type = 'Event';
 $registerable = getDBObjects($query, $swap, $type);
 
 if (sizeof($registerable) == 1 && $registerable[0]->canSubscribe == 1){
-    /*$sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
-    WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
-    $statement = $db->prepare($sql);
-    if (!$statement)
-        throw new Exception("Database error.");
-    $statement->execute(array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id));
-    $status_t = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
 
+    //check if person can register on event
     $query = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
     WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
     $swap = array(':eventID'=>$data[0]->id, ':ledenID'=>$info[0]->id);
