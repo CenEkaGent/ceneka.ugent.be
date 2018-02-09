@@ -18,5 +18,21 @@ if ($handle){
     $password=str_replace("\n","",$password);
 }
 
+include_once 'views/models/event.php';
+include_once 'views/models/application.php';
+include_once 'views/models/lid.php';
+include_once 'views/models/registration.php';
+
+function getDBObjects($query, $aliases, $object){
+    $host = "localhost";
+    $db = "ceneka";
+    // Open DB connection
+    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
+    $statement = $db->prepare($query);
+    if (!$statement)
+        throw new Exception("Database error.");
+    $statement->execute($aliases);
+    return $statement->fetchAll(PDO::FETCH_CLASS, $object);
+}
 
 ?>

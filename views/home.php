@@ -27,14 +27,18 @@ try {
     $next_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
      
     // Fetch previous event from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
+    /*$sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
 
     $statement = $db->prepare($sql);
     if (!$statement)
         throw new Exception("Database error.");
 
     $statement->execute(array(':currentTime' => date('Y-m-d H:i:s')));
-    $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+    $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
+    $query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
+    $swap = array(':currentTime' => date('Y-m-d H:i:s'));
+    $type = 'Event';
+    $previous_events = getDBObjects($query, $swap, $type);
 
     // Fetch data from database using SQL
     $sql = 'SELECT * FROM applications ORDER BY :orderColumn';
