@@ -8,7 +8,7 @@ include_once 'layouts/main/header.php';
 // Include Event model for easier access
 include_once 'models/event.php';
 include_once 'models/application.php';
-
+/*
 $handle = fopen(".secret", "r");
 if ($handle){
     if(($username = fgets($handle)) == false){
@@ -19,7 +19,7 @@ if ($handle){
     }
     $username=str_replace("\n","",$username);
     $password=str_replace("\n","",$password);
-}
+}*/
 try {
     $host = "localhost";
     $db = "ceneka";
