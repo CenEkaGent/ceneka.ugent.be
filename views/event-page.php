@@ -39,6 +39,7 @@ if (!$statement)
     throw new Exception("Database error.");
 $statement->execute(array(':eventID'=>$data[0]->id));
 $registerable = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+print_r($registerable);
 if (sizeof($registerable) == 1 && $registerable[0]['canSubscribe'] == 1){
     $sql = 'SELECT IF (registraties.event_id IS NULL, FALSE, TRUE) AS aanwezig FROM registraties 
     WHERE registraties.event_id = :eventID AND registraties.leden_id = :ledenID';
