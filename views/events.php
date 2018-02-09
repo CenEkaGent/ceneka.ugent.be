@@ -9,27 +9,18 @@ include_once 'layouts/main/header.php';
 include_once 'models/event.php';
 
 try {
-    $host = "localhost";
-    $db = "ceneka";
-    // Open DB connection
-    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
-    
-    // Fetch data from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn';
-    $statement = $db->prepare($sql);
-    if (!$statement)
-        throw new Exception("Database error.");
-    $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
-    $futureEvents = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
+    //Fetch events newer as current date from DB
+    $query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn';
+    $swap = array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s'));
+    $type = 'Event';
+    $futureEvents = getDBObjects($query, $swap, $type);
 
-    $sql = 'SELECT * FROM events WHERE endTime <= :currentTime ORDER BY :orderColumn';
-    $statement = $db->prepare($sql);
-    if (!$statement)
-        throw new Exception("Database error.");
-    $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
-    $pastEvents = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');
-    // Close DB connection
-    $db = null;
+    //Fetch events older as current date from DB
+    $query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
+    $swap = array(':currentTime' => date('Y-m-d H:i:s'));
+    $type = 'Event';
+    $pastEvents = getDBObjects($query, $swap, $type);
+    
 } catch (Exception $e) {
     echo $e->getTraceAsString();
     //exit(header("Location: /500/"));
