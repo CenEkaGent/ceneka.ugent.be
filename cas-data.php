@@ -24,7 +24,8 @@ include_once 'views/models/application.php';
 include_once 'views/models/lid.php';
 include_once 'views/models/registration.php';
 
-function getDBObjects($query, $aliases, $object, $username, $password){
+function getDBObjects($query, $aliases, $object){
+    global $username, $password;
     $host = "localhost";
     $db = "ceneka";
     // Open DB connection
