@@ -17,17 +17,6 @@ $elements = explode('/', $path);
 function go_to_event($elements, $attr = Null) {
     if (sizeof($elements) == 1) {
         
-        $handle = fopen(".secret", "r");
-        if ($handle){
-            if(($username = fgets($handle)) == false){
-                exit(header("Location: /500/"));
-            }
-            if(($password = fgets($handle)) == false){
-                exit(header("Location: /500/"));
-            }
-        }
-        $username=str_replace("\n","",$username);
-        $password=str_replace("\n","",$password);
         try {
 	    $host = "localhost";
 	    $db = "ceneka";
