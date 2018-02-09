@@ -10,50 +10,20 @@ include_once 'models/event.php';
 include_once 'models/application.php';
 
 try {
-    $host = "localhost";
-    $db = "ceneka";
-    // Open DB connection
-    $db = new PDO('mysql:dbname=ceneka;host=localhost',$username, $password);
-    # $db = new PDO('sqlite:.events.sqlite'); // For development purposes
-    /*
-    // Fetch next event from database using SQL
-    $sql = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
-    $statement = $db->prepare($sql);
-    if (!$statement)
-        throw new Exception("Database error.");
-
-    $statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s')));
-    //$statement->execute(array(':orderColumn' => 'startTime', ':currentTime' => now()));
-    $next_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
-
+        
+    //Fetch events newer as current date from DB
     $query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
     $swap = array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
     $next_events = getDBObjects($query, $swap, $type);
-     
-    // Fetch previous event from database using SQL
-    /*$sql = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
-
-    $statement = $db->prepare($sql);
-    if (!$statement)
-        throw new Exception("Database error.");
-
-    $statement->execute(array(':currentTime' => date('Y-m-d H:i:s')));
-    $previous_events = $statement->fetchAll(PDO::FETCH_CLASS, 'Event');*/
+   
+    //Fetch events older as current date from DB
     $query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
     $swap = array(':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
     $previous_events = getDBObjects($query, $swap, $type);
 
-    /*
-    // Fetch data from database using SQL
-    $sql = 'SELECT * FROM applications ORDER BY :orderColumn';
-    $statement = $db->prepare($sql);
-    if (!$statement)
-        throw new Exception("Database error.");
-    $statement->execute(array(':orderColumn' => 'priority'));
-    $applications = $statement->fetchAll(PDO::FETCH_CLASS, 'Application');*/
-
+    //Fetch applications
     $query = 'SELECT * FROM applications ORDER BY :orderColumn';
     $swap = array(':orderColumn' => 'priority');
     $type = 'Application';
@@ -62,9 +32,7 @@ try {
     // Display previous event when no future events are present
     if (sizeof($next_events) == 0)
         $next_events = [array_shift($previous_events)];
-
-    // Close DB connection
-    $db = null;
+        
 } catch (Exception $e) {
     echo $e->getMessage();
     // exit(header("Location: /500/"));
