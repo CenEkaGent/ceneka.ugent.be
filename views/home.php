@@ -12,8 +12,9 @@ include_once 'models/application.php';
 try {
         
     //Fetch events newer as current date from DB
-    $query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY :orderColumn LIMIT 2';
-    $swap = array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s'));
+    $query = 'SELECT * FROM events WHERE endTime > :currentTime ORDER BY startTime LIMIT 2';
+    //$swap = array(':orderColumn' => 'startTime', ':currentTime' => date('Y-m-d H:i:s'));
+    $swap = array(':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
     $next_events = getDBObjects($query, $swap, $type);
    
