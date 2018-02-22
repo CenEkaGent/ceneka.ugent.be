@@ -18,7 +18,7 @@ try {
     $next_events = getDBObjects($query, $swap, $type);
    
     //Fetch events older as current date from DB
-    $query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime DESC';
+    $query = 'SELECT * FROM events WHERE endTime < :currentTime ORDER BY endTime';
     $swap = array(':currentTime' => date('Y-m-d H:i:s'));
     $type = 'Event';
     $previous_events = getDBObjects($query, $swap, $type);
