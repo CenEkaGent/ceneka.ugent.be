@@ -107,6 +107,20 @@ if (empty($elements[0])) {
             $descriptor = 'Nieuw Lid';
             include 'views/lid.php';
             break;
+        case 'gitles.zip':
+            $file = 'assets/docs/gitles.zip';
+
+            if (file_exists($file)) {
+                header('Content-Description: File Transfer');
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename="'.basename($file).'"');
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize($file));
+                readfile($file);
+                exit;
+            }
         case '500':
             $descriptor = "500 Internal Server Error";
             header('HTTP/1.1 500 Internal Server Error');
