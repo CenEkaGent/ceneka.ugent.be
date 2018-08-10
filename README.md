@@ -5,7 +5,7 @@ A completely redesigned website for CenEka build from the ground up
 ## Get started
 
 ### Install PHP on Windows
-1. Enable Bash on Ubuntu on Windows `https://msdn.microsoft.com/en-us/commandline/wsl/install_guide`
+1. Enable [Bash on Ubuntu on Windows][bash windows]
 2. Open Bash on Ubuntu on Windows.
 3. Run following commands
 ```
@@ -48,3 +48,5 @@ When developping with VSCode, following packages are recommended:
 
 ## Licence
 This project is licensed under the terms of the MIT license. Read the licence in the [licence file](LICENSE.md).
+
+[bash windows]: <https://msdn.microsoft.com/en-us/commandline/wsl/install_guide>
