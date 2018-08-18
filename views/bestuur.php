@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        Als praeses is Achim het voornaamste aanspreekpunt van de vereniging. Hij vertegenwoordigd CenEka op
+                                        Als praeses is Achim het voornaamste aanspreekpunt van de vereniging. Hij vertegenwoordigt CenEka op
                                         allerlei events doorheen het academiejaar. Dit houdt hem anderzijds allerminst tegen om actief mee te werken
                                         aan onze activiteiten.<br>
                                         Mail: <a>praeses@ceneka.be</a>
@@ -297,7 +297,7 @@
                                         Simpelweg een onuitputtelijke bron van geluk, positiviteit en blijdschap (ideale kwaliteiten
                                         om al de bugs uit onze code te halen). Zonder overdrijven kunnen we zeggen dat Tim een
                                         essentieel deel uitmaakt van CenEka en door buiten de oevers van web te treden de ruggengraat
-                                        van de vereniging vervolledigd. <br>
+                                        van de vereniging vervolledigt. <br>
                                         Mail: <a>web@ceneka.be</a>
                                     </div> 
                                 </div>
